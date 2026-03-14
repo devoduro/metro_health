@@ -82,6 +82,11 @@ class BookingController extends Controller
         return view('booking.success');
     }
 
+    public function specialistClinics()
+    {
+        return view('booking.specialist-clinics');
+    }
+
     public function getServicePrice($serviceId, $hairType)
     {
         $service = Service::find($serviceId);

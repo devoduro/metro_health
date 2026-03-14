@@ -9,7 +9,17 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav align-items-center">
                 <li class="nav-item"><a class="nav-link <?php echo e(request()->routeIs('home') ? 'active' : ''); ?>" href="<?php echo e(route('home')); ?>">Home</a></li>
-                <li class="nav-item"><a class="nav-link <?php echo e(request()->routeIs('about') ? 'active' : ''); ?>" href="<?php echo e(route('about')); ?>">About</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle <?php echo e(request()->routeIs('about') || request()->routeIs('who-we-are') || request()->routeIs('team') || request()->routeIs('gallery') ? 'active' : ''); ?>" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        About Us
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <li><a class="dropdown-item" href="<?php echo e(route('who-we-are')); ?>">Who We Are</a></li>
+                        <li><a class="dropdown-item" href="<?php echo e(route('about')); ?>">About</a></li>
+                        <li><a class="dropdown-item" href="<?php echo e(route('team')); ?>">Our Team</a></li>
+                        <li><a class="dropdown-item" href="<?php echo e(route('gallery')); ?>">Our Gallery</a></li>
+                    </ul>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle <?php echo e(request()->routeIs('services.*') ? 'active' : ''); ?>" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Services
@@ -27,11 +37,12 @@
                         <li><a class="dropdown-item" href="<?php echo e(route('services.index')); ?>">View All Services</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link <?php echo e(request()->routeIs('shop.*') ? 'active' : ''); ?>" href="<?php echo e(route('shop.index')); ?>">Shop</a></li>
+                <li class="nav-item"><a class="nav-link <?php echo e(request()->routeIs('booking.specialist-clinics') ? 'active' : ''); ?>" href="<?php echo e(route('booking.specialist-clinics')); ?>">Specialist Clinics</a></li>
+                <li class="nav-item"><a class="nav-link <?php echo e(request()->routeIs('news-update.*') ? 'active' : ''); ?>" href="<?php echo e(route('news-update.index')); ?>">News & Articles</a></li>
                 <li class="nav-item"><a class="nav-link <?php echo e(request()->routeIs('contact') ? 'active' : ''); ?>" href="<?php echo e(route('contact')); ?>">Contact Us</a></li>
                 <li class="nav-item">
                     <a href="<?php echo e(route('booking.index')); ?>" class="btn btn-primary-custom btn-sm">
-                        <i class="fas fa-calendar-check me-2"></i>Book an Appointment
+                        <i class="fas fa-calendar-check me-2"></i>Book Appointment
                     </a>
                 </li>
                 <li class="nav-item ms-lg-3">

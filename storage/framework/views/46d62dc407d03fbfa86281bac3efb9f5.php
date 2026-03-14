@@ -540,50 +540,150 @@
         </div>
     </section>
 
-    <!-- About Ashlocs Section -->
-    <section class="about-section section-padding">
+    <!-- Specialist Clinic Schedule Section -->
+    <section class="clinic-schedule-section section-padding">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                    <div class="about-image-wrapper">
-                        <img src="images/about/2026-01-12-cZWfH5uy.jpeg" alt="Professional Hair Care" class="about-main-image">
-                        <div class="about-badge">
-                            <div class="badge-content">
-                                <h3 class="badge-number">5.0</h3>
-                                <p class="badge-text">Average Rating</p>
+            <div class="row align-items-center g-5">
+                <!-- Left Column: Clinic Schedules -->
+                <div class="col-lg-7" data-aos="fade-right">
+                    <div class="schedule-header mb-4">
+                        <h2 class="schedule-main-title">Specialist Clinic Days & Time</h2>
+                        <p class="schedule-subtitle">Walk in during clinic hours or book an appointment with our specialist doctors</p>
+                    </div>
+
+                    <div class="clinic-schedules-grid">
+                        <!-- Obstetrics and Gynaecology -->
+                        <div class="schedule-item">
+                            <div class="schedule-icon">
+                                <i class="fas fa-baby"></i>
+                            </div>
+                            <div class="schedule-details">
+                                <h4 class="clinic-name">Obstetrics and Gynaecology</h4>
+                                <div class="schedule-time">
+                                    <span class="days"><i class="fas fa-calendar-alt"></i> Wednesday, Friday & Saturday</span>
+                                    <span class="time"><i class="fas fa-clock"></i> 8:00 AM - 2:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pediatric Clinic -->
+                        <div class="schedule-item">
+                            <div class="schedule-icon">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <div class="schedule-details">
+                                <h4 class="clinic-name">Pediatric Clinic</h4>
+                                <div class="schedule-time">
+                                    <span class="days"><i class="fas fa-calendar-alt"></i> Saturday</span>
+                                    <span class="time"><i class="fas fa-clock"></i> 8:00 AM - 2:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ear, Nose & Throat -->
+                        <div class="schedule-item">
+                            <div class="schedule-icon">
+                                <i class="fas fa-head-side-mask"></i>
+                            </div>
+                            <div class="schedule-details">
+                                <h4 class="clinic-name">Ear, Nose & Throat</h4>
+                                <div class="schedule-time">
+                                    <span class="days"><i class="fas fa-calendar-alt"></i> Wednesday</span>
+                                    <span class="time"><i class="fas fa-clock"></i> 4:00 PM - 6:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Urology -->
+                        <div class="schedule-item">
+                            <div class="schedule-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="schedule-details">
+                                <h4 class="clinic-name">Urology</h4>
+                                <div class="schedule-time">
+                                    <span class="days"><i class="fas fa-phone-alt"></i> By Appointment Only</span>
+                                    <span class="time"><i class="fas fa-phone"></i> Call: +233 24 571 7681</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Geriatric / Elderly Care -->
+                        <div class="schedule-item">
+                            <div class="schedule-icon">
+                                <i class="fas fa-walking"></i>
+                            </div>
+                            <div class="schedule-details">
+                                <h4 class="clinic-name">Geriatric / Elderly Care</h4>
+                                <div class="schedule-time">
+                                    <span class="days"><i class="fas fa-calendar-alt"></i> Tuesday & Thursday</span>
+                                    <span class="time"><i class="fas fa-clock"></i> Tue: 2:00 PM - 5:00 PM | Thu: 8:00 AM - 4:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Orthopedics -->
+                        <div class="schedule-item">
+                            <div class="schedule-icon">
+                                <i class="fas fa-bone"></i>
+                            </div>
+                            <div class="schedule-details">
+                                <h4 class="clinic-name">Orthopedics</h4>
+                                <div class="schedule-time">
+                                    <span class="days"><i class="fas fa-calendar-alt"></i> Tuesday</span>
+                                    <span class="time"><i class="fas fa-clock"></i> 2:00 PM - 8:00 PM</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 about-content" data-aos="fade-left">
-                    <h2 class="mb-4">We Provide Professional Hair Care Services</h2>
-                    <p class="about-description">
-                        We are a full-service hair care studio specializing in dreadlocks, braids, haircuts and haircare education. With a team of skilled professionals, we offer tailored services for all hair types. We also run expert-led workshops and stock a curated range of hair products and accessories.
-                    </p>
-                    <div class="about-stats mt-4 mb-4">
-                        <div class="row g-4">
-                            <div class="col-6">
-                                <div class="stat-box">
-                                    <h3 class="stat-number">500+</h3>
-                                    <p class="stat-label">Clients Satisfied and Repeating</p>
-                                </div>
+
+                <!-- Right Column: Consult Now CTA -->
+                <div class="col-lg-5" data-aos="fade-left">
+                    <div class="consult-cta-card">
+                        <div class="cta-icon-wrapper">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3 class="cta-title">Ready to See a Specialist?</h3>
+                        <p class="cta-description">Book your appointment with our expert doctors through Microsoft Outlook and get priority service with reduced waiting time.</p>
+                        
+                        <div class="cta-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Instant Confirmation</span>
                             </div>
-                            <div class="col-6">
-                                <div class="stat-box">
-                                    <h3 class="stat-number">10+</h3>
-                                    <p class="stat-label">Years Work Experience</p>
-                                </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Priority Service</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Reduced Wait Time</span>
                             </div>
                         </div>
+
+                        <a href="https://outlook.office365.com/owa/calendar/MetroHealthHospital@metrohealth.com.gh/bookings/" 
+                           target="_blank" 
+                           class="btn-consult-now">
+                            <i class="fab fa-microsoft"></i>
+                            <span>Consult Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                        <div class="cta-contact-info">
+                            <p class="or-text">Or call us directly</p>
+                            <a href="tel:+233241850091" class="phone-cta">
+                                <i class="fas fa-phone-alt"></i>
+                                +233 24 185 0091
+                            </a>
+                        </div>
                     </div>
-                    <a href="<?php echo e(route('about')); ?>" class="btn btn-primary-custom btn-lg">
-                        <i class="fas fa-arrow-right me-2"></i>More About Us
-                    </a>
                 </div>
             </div>
         </div>
     </section>
-   
+
+ 
     <!-- Testimonials Section -->
     <section class="testimonials-section section-padding">
         <div class="container">
@@ -1488,6 +1588,349 @@ unset($__errorArgs, $__bag); ?>
 
             .testimonial-card {
                 padding: 25px;
+            }
+        }
+
+        /* Clinic Schedule Section */
+        .clinic-schedule-section {
+            position: relative;
+            background: linear-gradient(to right, rgba(30, 50, 90, 0.85), rgba(20, 40, 70, 0.75)),
+                        url('https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=1600') center/cover;
+            padding: 80px 0;
+            margin-top: 0;
+            overflow: hidden;
+        }
+
+        .schedule-header {
+            margin-bottom: 30px;
+        }
+
+        .schedule-main-title {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .schedule-subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        .clinic-schedules-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .schedule-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #a8207a;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .schedule-item:hover {
+            background: white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .schedule-icon {
+            width: 50px;
+            height: 50px;
+            background: #a8207a;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .schedule-icon i {
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        .schedule-details {
+            flex: 1;
+        }
+
+        .clinic-name {
+            color: #2d3e50;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .schedule-time {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .schedule-time span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        .schedule-time i {
+            color: #a8207a;
+            font-size: 0.85rem;
+        }
+
+        /* Consult CTA Card */
+        .consult-cta-card {
+            background: #a8207a;
+            border-radius: 25px;
+            padding: 45px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(168, 32, 122, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .consult-cta-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .cta-icon-wrapper {
+            width: 90px;
+            height: 90px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-icon-wrapper i {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .consult-cta-card .cta-title {
+            color: white;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-description {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-features {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .feature-item i {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .btn-consult-now {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background: white;
+            color: #a8207a;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.15rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 25px;
+        }
+
+        .btn-consult-now:hover {
+            background: #f8f9fa;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            color: #a8207a;
+        }
+
+        .btn-consult-now i.fab {
+            font-size: 1.3rem;
+        }
+
+        .btn-consult-now i.fa-arrow-right {
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-consult-now:hover i.fa-arrow-right {
+            transform: translateX(5px);
+        }
+
+        .cta-contact-info {
+            position: relative;
+            z-index: 1;
+        }
+
+        .or-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .phone-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .phone-cta:hover {
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .phone-cta i {
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Design for Clinic Schedule */
+        @media (max-width: 991px) {
+            .schedule-main-title {
+                font-size: 2rem;
+            }
+
+            .clinic-schedules-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .consult-cta-card .cta-title {
+                font-size: 1.7rem;
+            }
+
+            .cta-description {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .clinic-schedule-section {
+                padding: 60px 0;
+            }
+
+            .schedule-main-title {
+                font-size: 1.8rem;
+            }
+
+            .schedule-subtitle {
+                font-size: 1rem;
+            }
+
+            .clinic-schedules-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .schedule-item {
+                padding: 18px;
+            }
+
+            .schedule-icon {
+                width: 45px;
+                height: 45px;
+            }
+
+            .schedule-icon i {
+                font-size: 1.1rem;
+            }
+
+            .clinic-name {
+                font-size: 1rem;
+            }
+
+            .schedule-time span {
+                font-size: 0.8rem;
+            }
+
+            .consult-cta-card {
+                padding: 35px 25px;
+                margin-top: 30px;
+            }
+
+            .consult-cta-card .cta-title {
+                font-size: 1.5rem;
+            }
+
+            .cta-description {
+                font-size: 0.95rem;
+            }
+
+            .btn-consult-now {
+                width: 100%;
+                padding: 16px 30px;
+                font-size: 1.05rem;
+            }
+
+            .phone-cta {
+                font-size: 1.1rem;
             }
         }
     </style>

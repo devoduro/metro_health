@@ -18,6 +18,21 @@ Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store
 // About Us
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
+// Who We Are
+Route::get('/who-we-are', function () {
+    return view('who-we-are');
+})->name('who-we-are');
+
+// Our Team
+Route::get('/our-team', function () {
+    return view('team');
+})->name('team');
+
+// Gallery
+Route::get('/gallery', function () {
+    return view('gallery');
+})->name('gallery');
+
 // Services
 Route::prefix('services')->name('services.')->group(function () {
     Route::get('/', [ServiceController::class, 'index'])->name('index');
@@ -36,6 +51,7 @@ Route::prefix('booking')->name('booking.')->group(function () {
     Route::post('/', [BookingController::class, 'store'])->name('store');
     Route::get('/booking', [BookingController::class, 'index'])->name('booking');
     Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
+    Route::get('/specialist-clinics', [BookingController::class, 'specialistClinics'])->name('specialist-clinics');
     Route::get('/api/service-price/{serviceId}/{hairType}', [BookingController::class, 'getServicePrice'])->name('api.service-price');
     Route::get('/success', [BookingController::class, 'success'])->name('success');
 });
