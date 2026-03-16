@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <?php echo $__env->make('partials.seo', [
-        'title' => 'Contact Us',
-        'description' => 'Get in touch with Ashlocs for professional hair care services. Call +447724500349 or email bookings@ashlocs.co.uk. UK-wide mobile service available.',
-        'keywords' => 'contact ashlocs, hair salon contact, book appointment, hair care enquiries, UK mobile hair service'
+        'title' => 'Contact Us - Metro Health Hospital',
+        'description' => 'Get in touch with Metro Health Hospital. Call +233 24 185 0091 or visit us at 4 Barekese Road, Abrepo Junction, Kumasi. We are here to help you 24/7.',
+        'keywords' => 'contact metro health, hospital contact, medical appointments, emergency services, healthcare contact kumasi'
     ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,16 +19,21 @@
     <link rel="stylesheet" href="<?php echo e(asset('css/ashlocs-custom.css')); ?>">
 </head>
 <body>
-    <?php echo $__env->make('partials.navigation', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
+  <!-- Top Header Bar -->
+    <?php echo $__env->make('partials.top_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <!-- Main Navbar -->
+ 
+    <?php echo $__env->make('partials.navigation', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <!-- Page Hero -->
     <section class="page-hero" style="background: linear-gradient(135deg, #FFF5F0 0%, #FFFFFF 100%); padding: 120px 0 80px;">
         <div class="container">
             <div class="row align-items-center justify-content-center text-center">
                 <div class="col-lg-8" data-aos="fade-up">
-                    <h1 class="display-3 fw-bold mb-4" style="color: var(--ashlocs-dark);">Get In Touch</h1>
+</br></br>
+                    <h1 class="display-3 fw-bold mb-4" style="color: var(--ashlocs-dark);">Contact Us</h1>
                     <p class="lead" style="font-size: 1.5rem; color: var(--ashlocs-gray);">
-                        We'd love to hear from you. Reach out to book an appointment or ask any questions.
+                        We're here to help. Reach out to book an appointment or ask any questions about our services.
                     </p>
                 </div>
             </div>
@@ -44,8 +49,8 @@
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
                         </div>
-                        <h4>Phone</h4>
-                        <p><a href="tel:+447724500349">+44 7724 500349</a></p>
+                        <h4>Call Us</h4>
+                        <p><a href="tel:+233241850091">+233 24 185 0091</a></p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
@@ -54,7 +59,7 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h4>Email</h4>
-                        <p><a href="mailto:bookings@ashlocs.co.uk">bookings@ashlocs.co.uk</a></p>
+                        <p><a href="mailto:info@metrohealth.com">info@metrohealth.com</a></p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
@@ -63,7 +68,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <h4>Location</h4>
-                        <p><a href="https://maps.app.goo.gl/878MgLGDS9X65mS48" target="_blank">9 Union St RG1 1EU<br>United Kingdom</a></p>
+                        <p><a href="https://maps.app.goo.gl/6QVxXSQyTEZJD48cA" target="_blank">4 Barekese Road<br>Abrepo Junction, Kumasi</a></p>
                     </div>
                 </div>
             </div>
@@ -79,7 +84,7 @@
                     <div class="contact-form-wrapper">
                         <h2 class="mb-4" style="font-size: 2.5rem; font-weight: 800;">Send Us a Message</h2>
                         <p class="mb-5" style="font-size: 1.1rem; color: var(--ashlocs-gray);">
-                            Fill out the form below and we'll get back to you as soon as possible.
+                            Fill out the form below and our team will respond within 24 hours. We're committed to providing you with prompt and professional service.
                         </p>
 
                         <?php if(session('success')): ?>
@@ -169,8 +174,8 @@ unset($__errorArgs, $__bag); ?>
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
-                                <h5>Address</h5>
-                                <p>UK-wide Home Service<br>9 Union St RG1 1EU<br>United Kingdom</p>
+                                <h5>Visit Our Hospital</h5>
+                                <p>4 Barekese Road, Abrepo Junction<br>Near Angel Fm, Kumasi<br>Ghana</p>
                             </div>
                         </div>
 
@@ -179,8 +184,13 @@ unset($__errorArgs, $__bag); ?>
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div>
-                                <h5>Phone</h5>
-                                <p><a href="tel:+447724500349">+44 7724 500349</a></p>
+                                <h5>Call Us Anytime</h5>
+                                <p>
+                                    <a href="tel:+233241850091">+233 24 185 0091</a><br>
+                                    <a href="tel:+233248555596">+233 24 855 5596</a><br>
+                                    <a href="tel:+233264840859">+233 26 484 0859</a><br>
+                                    <a href="tel:+233501637303">+233 50 163 7303</a>
+                                </p>
                             </div>
                         </div>
 
@@ -190,7 +200,7 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                             <div>
                                 <h5>Email</h5>
-                                <p><a href="mailto:bookings@ashlocs.co.uk">bookings@ashlocs.co.uk</a></p>
+                                <p><a href="mailto:info@metrohealth.com">info@metrohealth.com</a></p>
                             </div>
                         </div>
 
@@ -200,16 +210,7 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                             <div>
                                 <h5>Working Hours</h5>
-                                <p>Monday - Saturday: 9:00 AM - 8:00 PM<br>Sunday: 10:00 AM - 6:00 PM</p>
-                            </div>
-                        </div>
-
-                        <div class="social-links mt-5">
-                            <h5 class="mb-3" style="font-weight: 700;">Follow Us</h5>
-                            <div class="d-flex gap-3">
-                                <a href="https://www.facebook.com/share/1AnxAg2UPS/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://www.instagram.com/ashlocs" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.tiktok.com/@ashlocs_dreadlocks" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                                <p>24/7 Emergency Services Available<br>Outpatient: Mon - Sat: 8:00 AM - 6:00 PM</p>
                             </div>
                         </div>
                     </div>
@@ -222,7 +223,7 @@ unset($__errorArgs, $__bag); ?>
     <section class="section-padding" style="background: var(--ashlocs-light); padding: 0;">
         <div class="container-fluid p-0">
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.0234567890123!2d-0.9876543210987654!3d51.45678901234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDI3JzI0LjQiTiAwwrA1OSczMS4xIlc!5e0!3m2!1sen!2suk!4v1234567890123!5m2!1sen!2suk" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.498227593439!2d-1.640205425293234!3d6.708884020981882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdb97ab4dfd3633%3A0xef7c88c025fe79c5!2sMetro%20Health%20Hospital!5e0!3m2!1sen!2sgh!4v1773636626229!5m2!1sen!2sgh" 
                 width="100%" 
                 height="450" 
                 style="border:0;" 
@@ -239,7 +240,7 @@ unset($__errorArgs, $__bag); ?>
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center" data-aos="fade-up">
                     <h2>Ready to Book Your Appointment?</h2>
-                    <p>Experience professional hair care that elevates your crown. Book your appointment today!</p>
+                    <p>Experience quality healthcare with compassion and excellence. Book your appointment today!</p>
                     <a href="<?php echo e(route('booking.index')); ?>" class="btn btn-white-custom btn-lg">
                         <i class="fas fa-calendar-check me-2"></i>Book an Appointment
                     </a>

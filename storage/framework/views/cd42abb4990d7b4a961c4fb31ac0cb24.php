@@ -1,42 +1,131 @@
-<footer>
-    <div class="container">
+<footer style="background: linear-gradient(135deg, #1e2a4a 0%, #2d3e5f 100%); padding: 60px 0 0; position: relative; overflow: hidden;">
+    <!-- Background Pattern -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.03; background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+    <div class="container" style="position: relative; z-index: 1;">
         <div class="row">
+            <!-- About Section -->
             <div class="col-lg-4 mb-4 mb-lg-0">
                 <a href="<?php echo e(route('home')); ?>" class="d-block mb-3">
-                    <img src="<?php echo e(asset('images/2026-01-12-J8o94jxc.png')); ?>" alt="Ashlocs Logo" class="footer-logo">
+                    <img src="<?php echo e(asset('images/logo.png')); ?>" alt="Metro Health Hospital Logo" style="height: 60px; filter: brightness(0) invert(1);">
                 </a>
-                <p class="small text-white mb-4">We specialize in dreadlocks, offering everything from starter locs (crochet) and traditional full-head locs to partial/top locs, Sisterlocks and microlocs and expert re-locking and maintenance.</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/share/183aATKKiS/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/ashlocs" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@ashlocs_dreadlocks" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px;">
+                    At Metro Health, our mission is to provide patient-centered healthcare marked by empathy, excellence, and a genuine passion for improving the well-being of every individual who walks through our doors. While we are especially recognized for our exceptional care for the elderly, our team of highly skilled and experienced medical professionals spans a wide range of specialties.
+                </p>
+                <div class="social-icons" style="margin-top: 20px;">
+                    <a href="#" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; color: white; margin-right: 10px; transition: all 0.3s ease; text-decoration: none;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; color: white; margin-right: 10px; transition: all 0.3s ease; text-decoration: none;">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; color: white; margin-right: 10px; transition: all 0.3s ease; text-decoration: none;">
+                        <i class="fab fa-instagram"></i>
+                    </a>
                 </div>
             </div>
+
+            <!-- Quick Links -->
             <div class="col-lg-2 col-6 mb-4 mb-lg-0">
-                <h5 class="mb-3 fs-6 text-white text-uppercase">Services</h5>
-                <a href="<?php echo e(route('home')); ?>" class="footer-link">Home</a>
-                <a href="<?php echo e(route('about')); ?>" class="footer-link">About Us</a>
-                <a href="<?php echo e(route('services.index')); ?>" class="footer-link">Our Services</a>
-                <a href="<?php echo e(route('contact')); ?>" class="footer-link">Contact Us</a>
+                <h5 style="color: white; font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; position: relative; padding-bottom: 10px;">
+                    Quick Links
+                    <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: #84a33f;"></span>
+                </h5>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <a href="<?php echo e(route('home')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Home</a>
+                    <a href="<?php echo e(route('about')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">About Us</a>
+                    <a href="<?php echo e(route('services.index')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Our Services</a>
+                    <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Gallery</a>
+                    <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">FAQs</a>
+                    <a href="<?php echo e(route('contact')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Contact Us</a>
+                </div>
             </div>
-            <div class="col-lg-2 col-6 mb-4 mb-lg-0">
-                <h5 class="mb-3 fs-6 text-white text-uppercase">Company</h5>
-                <a href="<?php echo e(route('shop.index')); ?>" class="footer-link">Shop</a>
-                <a href="<?php echo e(route('booking.index')); ?>" class="footer-link">Book Appointment</a>
+
+            <!-- Our Services -->
+            <div class="col-lg-3 col-6 mb-4 mb-lg-0">
+                <h5 style="color: white; font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; position: relative; padding-bottom: 10px;">
+                    Our Services
+                    <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: #84a33f;"></span>
+                </h5>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <a href="<?php echo e(route('services.general-practice')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">General Practice</a>
+                    <a href="<?php echo e(route('services.eye-care')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Eye Care</a>
+                    <a href="<?php echo e(route('services.geriatric-care')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Care of Older Adults</a>
+                    <a href="<?php echo e(route('services.obstetrics-gynaecology')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Obstetrics & Gynaecology</a>
+                    <a href="<?php echo e(route('services.ent-care')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">ENT Care</a>
+                    <a href="<?php echo e(route('services.paediatrics')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Paediatrics</a>
+                </div>
             </div>
-            <div class="col-lg-4">
-                <h5 class="mb-3 fs-6 text-white text-uppercase">Contact</h5>
-                <p class="small text-muted mb-2"><i class="fas fa-phone me-2"></i>+447724500349</p>
-                <p class="small text-muted mb-2"><i class="fas fa-envelope me-2"></i>bookings@ashlocs.co.uk</p>
-                <p class="small text-muted"><i class="fas fa-map-marker-alt me-2"></i>UK-wide Home Service and 9 Union St RG1 1EU - United Kingdom</p>
+
+            <!-- Contact Us -->
+            <div class="col-lg-3">
+                <h5 style="color: white; font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; position: relative; padding-bottom: 10px;">
+                    Contact Us
+                    <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: #84a33f;"></span>
+                </h5>
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div style="display: flex; align-items: start;">
+                        <i class="fas fa-map-marker-alt" style="color: #84a33f; font-size: 1.1rem; margin-right: 12px; margin-top: 3px;"></i>
+                        <div>
+                            <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin: 0; line-height: 1.6;">4 Barekese Road, Abrepo Junction<br>Near Angel Fm, Kumasi, Ghana</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: start;">
+                        <i class="fas fa-phone" style="color: #84a33f; font-size: 1.1rem; margin-right: 12px; margin-top: 3px;"></i>
+                        <div>
+                            <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin: 0;">+233 24 185 0091</p>
+                            <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin: 0;">+233 24 185 0091</p>
+                            <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin: 0;">+233 24 185 0091</p>
+                            <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin: 0;">+233 24 185 0091</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: start;">
+                        <i class="fas fa-envelope" style="color: #84a33f; font-size: 1.1rem; margin-right: 12px; margin-top: 3px;"></i>
+                        <div>
+                            <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin: 0;">info@metrohealthgh.com</p>
+                            <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin: 0;">appointments@metrohealthgh.com</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: start;">
+                        <i class="fas fa-clock" style="color: #84a33f; font-size: 1.1rem; margin-right: 12px; margin-top: 3px;"></i>
+                        <div>
+                            <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin: 0; font-weight: 600;">24/7 Emergency Services</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <hr style="border-color: rgba(255,255,255,0.1); margin: 30px 0;">
-        <div class="text-center small text-white">
-            &copy; <span id="year"></span> Ashlocs. All Rights Reserved.
+
+        <!-- Bottom Bar -->
+        <div style="margin-top: 50px; padding: 25px 0; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.85rem; margin: 0;">
+                        &copy; <span id="year"></span> Metro Health Hospital. All rights reserved.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px;">Privacy Policy</a>
+                    <a href="#" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 0.85rem; margin-left: 20px;">Terms & Conditions</a>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
+
+<style>
+    footer a:hover {
+        color: #84a33f !important;
+        padding-left: 5px;
+    }
+    
+    footer .social-icons a:hover {
+        background: #84a33f !important;
+        transform: translateY(-3px);
+        padding-left: 0 !important;
+    }
+</style>
+
 <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 </script>

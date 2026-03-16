@@ -22,94 +22,10 @@
 </head>
 <body>
     <!-- Top Header Bar -->
-    <div class="top-header">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="top-header-left">
-                        <a href="tel:+233241850091" class="top-header-link">
-                            <i class="fas fa-phone-alt"></i> +233 24 185 0091
-                        </a>
-                        <a href="#" class="top-header-link">
-                            <i class="fas fa-map-marker-alt"></i> 4 Barekese Road, Abrepo Junction Near Angel Fm, Kumasi
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="top-header-right">
-                        <a href="#" class="top-header-link">
-                            <i class="fas fa-clock"></i> 24/7 Hr
-                        </a>
-                        <a href="mailto:info@metrohealth.com" class="top-header-link">
-                            <i class="fas fa-envelope"></i> info@metrohealth.com
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <?php echo $__env->make('partials.top_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <!-- Main Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top main-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="<?php echo e(route('home')); ?>">
-                <img src="<?php echo e(asset('images/logo/logo.png')); ?>" alt="Metro Health Logo" class="navbar-logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link active" href="<?php echo e(route('home')); ?>">Home</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            About Us
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                            <li><a class="dropdown-item" href="<?php echo e(route('about')); ?>">About Us</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Services
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                            <?php $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <?php if($service->slug): ?>
-                                <li><a class="dropdown-item" href="<?php echo e(route('services.show', $service->slug)); ?>"><?php echo e($service->title); ?></a></li>
-                                <?php endif; ?>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="<?php echo e(route('services.index')); ?>">View All Services</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Resources
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="resourcesDropdown">
-                            <li><a class="dropdown-item" href="#">Resources</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo e(route('contact')); ?>">Contact</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="clientDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Client
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="clientDropdown">
-                            <li><a class="dropdown-item" href="<?php echo e(route('shop.index')); ?>">Shop</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item ms-3">
-                        <a class="btn btn-book-appointment" href="<?php echo e(route('booking.index')); ?>">
-                            <i class="fas fa-calendar-check me-2"></i>BOOK APPOINTMENT
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+ 
+    <?php echo $__env->make('partials.navigation', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <!-- Hero Slider Section -->
     <section class="hero-slider">
         <!-- Slide 1 -->

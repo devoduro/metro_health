@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     @include('partials.seo', [
-        'title' => 'Our Services',
-        'description' => 'Explore our professional hair care services: dreadlocks, braiding, haircuts and training workshops. Expert care for textured hair with UK-wide mobile service.',
-        'keywords' => 'hair services, dreadlock services, braiding services, haircut services, training workshops, mobile hair service, textured hair care UK'
+        'title' => 'Our Services - Metro Health Hospital',
+        'description' => 'Comprehensive healthcare services at Metro Health Hospital in Kumasi. From general practice to specialized care.',
+        'keywords' => 'healthcare services, medical services, hospital kumasi, metro health services'
     ])
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,194 +19,327 @@
     <link rel="stylesheet" href="{{ asset('css/ashlocs-custom.css') }}">
 </head>
 <body>
+    <!-- Top Header Bar -->
+    @include('partials.top_header')
+    
+    <!-- Main Navbar -->
     @include('partials.navigation')
 
-    <!-- Hero Section -->
-    <section class="hero-section" style="min-height: 60vh; background: linear-gradient(135deg, #FFF5F0 0%, #FFFFFF 100%);">
-        <div class="container">
-            <div class="row align-items-center justify-content-center text-center" style="min-height: 60vh;">
+    <!-- Page Hero -->
+    <section class="page-hero" style="background: linear-gradient(135deg, rgba(9, 58, 91, 0.9) 0%, rgba(0, 82, 136, 0.85) 100%), url('{{ asset('images/services/page-bg-slider-02.png') }}') center/cover; padding: 120px 0 80px; margin-top: 44px; position: relative;">
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="row align-items-center justify-content-center text-center">
                 <div class="col-lg-8" data-aos="fade-up">
-                    <h1 class="display-3 fw-bold mb-4">Our Services</h1>
-                    <p class="lead" style="font-size: 1.5rem; color: var(--ashlocs-gray);">
-                        Elevating Your Crown, One Loc at a Time Through Exceptional Services
+                    <div class="service-icon-large mx-auto mb-4" style="width: 120px; height: 120px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; color: #2980b9; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h1 class="display-3 fw-bold mb-4" style="color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">Our Services</h1>
+                    <p class="lead" style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.95); text-shadow: 0 1px 2px rgba(0,0,0,0.1);">
+                        Comprehensive Healthcare Services for You and Your Family
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Grid with Images -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="row g-4">
-                <!-- Service 1: Dreadlocks -->
-                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-detail-card">
-                        <div class="service-image-wrapper">
-                            <img src="{{ asset('images/services/dreadlocks.jpg') }}" alt="Dreadlocks Service" style="width: 100%; height: 300px; object-fit: cover;">
-                            <div class="service-badge">Most Popular</div>
-                        </div>
-                        <div class="service-content">
-                            <div class="service-icon-small">
-                                <i class="fas fa-cut"></i>
-                            </div>
-                            <h3 class="service-title">Dreadlocks</h3>
-                            <p class="service-description">
-                                We specialize in creating and maintaining beautiful, healthy dreadlocks tailored to your style and hair type. From starter locs using the crochet method to traditional full-head locs, sisterlocks and expert maintenance.
-                            </p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check-circle"></i> Starter Locs (Crochet)</li>
-                                <li><i class="fas fa-check-circle"></i> Traditional Locs (Full-head)</li>
-                                <li><i class="fas fa-check-circle"></i> Partial / Top Locs</li>
-                                <li><i class="fas fa-check-circle"></i> Sisterlocks / Micro Locs</li>
-                                <li><i class="fas fa-check-circle"></i> Re-locking / Maintenance</li>
-                                <li><i class="fas fa-check-circle"></i> Extensions & Styling</li>
-                                <li><i class="fas fa-check-circle"></i> Coloring & Treatments</li>
-                            </ul>
-                            <div class="service-actions">
-                                <a href="{{ route('services.show', 'dreadlocks') }}" class="btn btn-primary-custom">Learn More</a>
-                                <a href="{{ route('booking.index') }}" class="btn btn-outline-custom">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 2: Haircut Services -->
-                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-detail-card">
-                        <div class="service-image-wrapper">
-                            <img src="{{ asset('images/services/Short-Hair-with-Low-Temp-Fade-and-Line-Up.jpg.webp') }}" alt="Haircut Services" style="width: 100%; height: 300px; object-fit: cover;">
-                        </div>
-                        <div class="service-content">
-                            <div class="service-icon-small">
-                                <i class="fas fa-scissors"></i>
-                            </div>
-                            <h3 class="service-title">Haircut Services</h3>
-                            <p class="service-description">
-                                Precision meets style with our professional haircut services tailored for all ages and hair textures. Whether you need a fresh fade, a bold new look, or expert cuts for textured hair, our skilled stylists deliver excellence.
-                            </p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check-circle"></i> Men's Haircuts</li>
-                                <li><i class="fas fa-check-circle"></i> Women's Haircuts</li>
-                                <li><i class="fas fa-check-circle"></i> Fades & Shape-ups</li>
-                                <li><i class="fas fa-check-circle"></i> Loc Trimming & Shaping</li>
-                                <li><i class="fas fa-check-circle"></i> Children's Haircuts</li>
-                            </ul>
-                            <div class="service-actions">
-                                <a href="{{ route('services.show', 'haircut-services') }}" class="btn btn-primary-custom">Learn More</a>
-                                <a href="{{ route('booking.index') }}" class="btn btn-outline-custom">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 3: Braiding Services -->
-                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-detail-card">
-                        <div class="service-image-wrapper">
-                            <img src="{{ asset('images/services/cornrow.jpeg') }}" alt="Braiding Services" style="width: 100%; height: 300px; object-fit: cover;">
-                        </div>
-                        <div class="service-content">
-                            <div class="service-icon-small">
-                                <i class="fas fa-spa"></i>
-                            </div>
-                            <h3 class="service-title">Braiding Services</h3>
-                            <p class="service-description">
-                                Protective and stylish, our braiding services are designed to enhance your beauty while keeping your natural hair healthy. From box braids to goddess braids, we create stunning styles that last.
-                            </p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check-circle"></i> Box Braids</li>
-                                <li><i class="fas fa-check-circle"></i> Knotless Braids</li>
-                                <li><i class="fas fa-check-circle"></i> Cornrows / Feed-in Braids</li>
-                                <li><i class="fas fa-check-circle"></i> Goddess Braids</li>
-                                <li><i class="fas fa-check-circle"></i> Senegalese Twists</li>
-                                <li><i class="fas fa-check-circle"></i> Braid Repair & Take-down</li>
-                            </ul>
-                            <div class="service-actions">
-                                <a href="{{ route('services.show', 'braiding-services') }}" class="btn btn-primary-custom">Learn More</a>
-                                <a href="{{ route('booking.index') }}" class="btn btn-outline-custom">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 4: Training & Workshops -->
-                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-detail-card">
-                        <div class="service-image-wrapper">
-                            <img src="{{ asset('images/services/2026-01-20-U9IWPQ4K.jpeg') }}" alt="Training & Workshops" style="width: 100%; height: 300px; object-fit: cover;">
-                        </div>
-                        <div class="service-content">
-                            <div class="service-icon-small">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <h3 class="service-title">Training & Workshops</h3>
-                            <p class="service-description">
-                                We offer hands-on, skill-focused sessions designed to equip you with the techniques, confidence and creativity to excel in the hair industry. Learn from experienced professionals in specialized training programs.
-                            </p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check-circle"></i> Dreadlocks Training</li>
-                                <li><i class="fas fa-check-circle"></i> Braid Training</li>
-                                <li><i class="fas fa-check-circle"></i> Haircut Training (Textured Hair)</li>
-                                <li><i class="fas fa-check-circle"></i> Group & 1:1 Pro Sessions</li>
-                            </ul>
-                            <div class="service-actions">
-                                <a href="{{ route('services.show', 'training-workshops') }}" class="btn btn-primary-custom">Learn More</a>
-                                <a href="{{ route('booking.index') }}" class="btn btn-outline-custom">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Our Services -->
-    <section class="section-padding" style="background: var(--ashlocs-light);">
+    <!-- Services Grid -->
+    <section class="section-padding" style="padding: 70px 0;">
         <div class="container">
             <div class="row mb-5">
-                <div class="col-12 text-center" data-aos="fade-up">
-                    <h2 class="section-title">Why Choose Our Services?</h2>
-                    <p class="section-subtitle">
-                        Experience the difference with Ashlocs professional hair care services
-                    </p>
+                <div class="col-lg-12 text-center" data-aos="fade-up">
+                    <h2 class="mb-4" style="font-size: 2.5rem; font-weight: 800; color: #2d3e50;">Expert Medical Care Across All Specialties</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #666;">At Metro Health Hospital, we provide a comprehensive range of medical services designed to meet all your healthcare needs. Our team of experienced specialists is committed to delivering exceptional care with compassion and expertise.</p>
                 </div>
             </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="fas fa-user-check"></i>
+
+            <div class="row">
+                <!-- Main Content - Services Grid -->
+                <div class="col-lg-8">
+                    <div class="row g-4">
+                <!-- General Practice -->
+                <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                        <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800" alt="General Practice" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
-                        <h4>Expert Stylists</h4>
-                        <p>Trained professionals with years of experience in hair care and styling</p>
+                        <div style="padding: 25px;">
+                            <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">General Practice</h3>
+                            <p class="mb-4" style="color: #666; font-size: 0.95rem; line-height: 1.6;">Comprehensive primary healthcare services for individuals and families of all ages.</p>
+                            <a href="{{ route('services.general-practice') }}" class="btn btn-sm" style="background: #84a33f; color: white; padding: 10px 25px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block;">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="fas fa-home"></i>
+
+                <!-- General Surgery -->
+                <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                        <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800" alt="General Surgery" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
-                        <h4>Home Service</h4>
-                        <p>UK-wide mobile service bringing professional care to your doorstep</p>
+                        <div style="padding: 25px;">
+                            <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">General Surgery</h3>
+                            <p class="mb-4" style="color: #666; font-size: 0.95rem; line-height: 1.6;">Expert surgical care with modern techniques for optimal patient outcomes.</p>
+                            <a href="{{ route('services.general-surgery') }}" class="btn btn-sm" style="background: #a8207a; color: white; padding: 10px 25px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block;">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="fas fa-leaf"></i>
+
+                <!-- Obstetrics & Gynaecology -->
+                <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                        <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=800" alt="Obstetrics & Gynaecology" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
-                        <h4>Natural Products</h4>
-                        <p>We use premium, natural hair care products for healthy results</p>
+                        <div style="padding: 25px;">
+                            <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">Obstetrics & Gynaecology</h3>
+                            <p class="mb-4" style="color: #666; font-size: 0.95rem; line-height: 1.6;">Comprehensive women's health services from pregnancy to menopause.</p>
+                            <a href="{{ route('services.obstetrics-gynaecology') }}" class="btn btn-sm" style="background: #84a33f; color: white; padding: 10px 25px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block;">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="fas fa-clock"></i>
+
+                <!-- Geriatric Care -->
+                <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                        <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800" alt="Geriatric Care" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
-                        <h4>Flexible Scheduling</h4>
-                        <p>Convenient appointment times that work with your busy schedule</p>
+                        <div style="padding: 25px;">
+                            <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">Geriatric Care</h3>
+                            <p class="mb-4" style="color: #666; font-size: 0.95rem; line-height: 1.6;">Specialized healthcare for older adults with compassion and expertise.</p>
+                            <a href="{{ route('services.geriatric-care') }}" class="btn btn-sm" style="background: #a8207a; color: white; padding: 10px 25px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block;">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neurology & Neurosurgery -->
+                <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                        <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800" alt="Neurology & Neurosurgery" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div style="padding: 25px;">
+                            <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">Neurology & Neurosurgery</h3>
+                            <p class="mb-4" style="color: #666; font-size: 0.95rem; line-height: 1.6;">Advanced care for neurological conditions and brain health.</p>
+                            <a href="{{ route('services.neurology-neurosurgery') }}" class="btn btn-sm" style="background: #84a33f; color: white; padding: 10px 25px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block;">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paediatrics -->
+                <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                        <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800" alt="Paediatrics" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div style="padding: 25px;">
+                            <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">Paediatrics</h3>
+                            <p class="mb-4" style="color: #666; font-size: 0.95rem; line-height: 1.6;">Expert care for children from birth to adolescence.</p>
+                            <a href="{{ route('services.paediatrics') }}" class="btn btn-sm" style="background: #a8207a; color: white; padding: 10px 25px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block;">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Urology -->
+                <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                        <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800" alt="Urology" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div style="padding: 25px;">
+                            <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">Urology</h3>
+                            <p class="mb-4" style="color: #666; font-size: 0.95rem; line-height: 1.6;">Restoring health and confidence through expert urological care.</p>
+                            <a href="{{ route('services.urology') }}" class="btn btn-sm" style="background: #84a33f; color: white; padding: 10px 25px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block;">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orthopaedic -->
+                <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                        <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800" alt="Orthopaedic" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div style="padding: 25px;">
+                            <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">Orthopaedic</h3>
+                            <p class="mb-4" style="color: #666; font-size: 0.95rem; line-height: 1.6;">Restoring motion and rebuilding strength for an active life.</p>
+                            <a href="{{ route('services.orthopaedic') }}" class="btn btn-sm" style="background: #a8207a; color: white; padding: 10px 25px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block;">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ENT Care -->
+                <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                        <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=800" alt="ENT Care" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div style="padding: 25px;">
+                            <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">ENT Care</h3>
+                            <p class="mb-4" style="color: #666; font-size: 0.95rem; line-height: 1.6;">Expert care for ear, nose, and throat with advanced solutions.</p>
+                            <a href="{{ route('services.ent-care') }}" class="btn btn-sm" style="background: #84a33f; color: white; padding: 10px 25px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block;">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eye Care -->
+                <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                        <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=800" alt="Eye Care" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div style="padding: 25px;">
+                            <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">Eye Care</h3>
+                            <p class="mb-4" style="color: #666; font-size: 0.95rem; line-height: 1.6;">Advanced ophthalmology for clearer vision and brighter future.</p>
+                            <a href="{{ route('services.eye-care') }}" class="btn btn-sm" style="background: #a8207a; color: white; padding: 10px 25px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block;">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plastic Surgery -->
+                <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+                        <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800" alt="Plastic Surgery" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div style="padding: 25px;">
+                            <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">Plastic Surgery</h3>
+                            <p class="mb-4" style="color: #666; font-size: 0.95rem; line-height: 1.6;">Reconstructive and cosmetic surgery to enhance appearance and restore function.</p>
+                            <a href="{{ route('services.plastic-surgery') }}" class="btn btn-sm" style="background: #84a33f; color: white; padding: 10px 25px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block;">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4" data-aos="fade-left">
+                    <!-- All Services Menu -->
+                    <div class="services-menu mb-4" style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);">
+                        <h4 class="mb-4" style="font-weight: 700; color: #2d3e50;">All Services</h4>
+                        <div class="services-list">
+                            <a href="{{ route('services.general-practice') }}" class="service-link" style="display: flex; align-items: center; padding: 12px 15px; margin-bottom: 8px; border-radius: 10px; text-decoration: none; background: #f8f9fa; transition: all 0.3s ease;">
+                                <i class="fas fa-stethoscope me-3" style="color: #666; font-size: 1.1rem;"></i>
+                                <span style="color: #666; font-weight: 500;">General Practice</span>
+                            </a>
+                            <a href="{{ route('services.general-surgery') }}" class="service-link" style="display: flex; align-items: center; padding: 12px 15px; margin-bottom: 8px; border-radius: 10px; text-decoration: none; background: #f8f9fa; transition: all 0.3s ease;">
+                                <i class="fas fa-user-md me-3" style="color: #666; font-size: 1.1rem;"></i>
+                                <span style="color: #666; font-weight: 500;">General Surgery</span>
+                            </a>
+                            <a href="{{ route('services.obstetrics-gynaecology') }}" class="service-link" style="display: flex; align-items: center; padding: 12px 15px; margin-bottom: 8px; border-radius: 10px; text-decoration: none; background: #f8f9fa; transition: all 0.3s ease;">
+                                <i class="fas fa-baby me-3" style="color: #666; font-size: 1.1rem;"></i>
+                                <span style="color: #666; font-weight: 500;">Obstetrics & Gynaecology</span>
+                            </a>
+                            <a href="{{ route('services.geriatric-care') }}" class="service-link" style="display: flex; align-items: center; padding: 12px 15px; margin-bottom: 8px; border-radius: 10px; text-decoration: none; background: #f8f9fa; transition: all 0.3s ease;">
+                                <i class="fas fa-user-friends me-3" style="color: #666; font-size: 1.1rem;"></i>
+                                <span style="color: #666; font-weight: 500;">Geriatric Care</span>
+                            </a>
+                            <a href="{{ route('services.neurology-neurosurgery') }}" class="service-link" style="display: flex; align-items: center; padding: 12px 15px; margin-bottom: 8px; border-radius: 10px; text-decoration: none; background: #f8f9fa; transition: all 0.3s ease;">
+                                <i class="fas fa-brain me-3" style="color: #666; font-size: 1.1rem;"></i>
+                                <span style="color: #666; font-weight: 500;">Neurology & Neurosurgery</span>
+                            </a>
+                            <a href="{{ route('services.paediatrics') }}" class="service-link" style="display: flex; align-items: center; padding: 12px 15px; margin-bottom: 8px; border-radius: 10px; text-decoration: none; background: #f8f9fa; transition: all 0.3s ease;">
+                                <i class="fas fa-child me-3" style="color: #666; font-size: 1.1rem;"></i>
+                                <span style="color: #666; font-weight: 500;">Paediatrics</span>
+                            </a>
+                            <a href="{{ route('services.urology') }}" class="service-link" style="display: flex; align-items: center; padding: 12px 15px; margin-bottom: 8px; border-radius: 10px; text-decoration: none; background: #f8f9fa; transition: all 0.3s ease;">
+                                <i class="fas fa-kidneys me-3" style="color: #666; font-size: 1.1rem;"></i>
+                                <span style="color: #666; font-weight: 500;">Urology</span>
+                            </a>
+                            <a href="{{ route('services.orthopaedic') }}" class="service-link" style="display: flex; align-items: center; padding: 12px 15px; margin-bottom: 8px; border-radius: 10px; text-decoration: none; background: #f8f9fa; transition: all 0.3s ease;">
+                                <i class="fas fa-bone me-3" style="color: #666; font-size: 1.1rem;"></i>
+                                <span style="color: #666; font-weight: 500;">Orthopaedic</span>
+                            </a>
+                            <a href="{{ route('services.ent-care') }}" class="service-link" style="display: flex; align-items: center; padding: 12px 15px; margin-bottom: 8px; border-radius: 10px; text-decoration: none; background: #f8f9fa; transition: all 0.3s ease;">
+                                <i class="fas fa-head-side-mask me-3" style="color: #666; font-size: 1.1rem;"></i>
+                                <span style="color: #666; font-weight: 500;">ENT Care</span>
+                            </a>
+                            <a href="{{ route('services.eye-care') }}" class="service-link" style="display: flex; align-items: center; padding: 12px 15px; margin-bottom: 8px; border-radius: 10px; text-decoration: none; background: #f8f9fa; transition: all 0.3s ease;">
+                                <i class="fas fa-eye me-3" style="color: #666; font-size: 1.1rem;"></i>
+                                <span style="color: #666; font-weight: 500;">Eye Care</span>
+                            </a>
+                            <a href="{{ route('services.plastic-surgery') }}" class="service-link" style="display: flex; align-items: center; padding: 12px 15px; margin-bottom: 8px; border-radius: 10px; text-decoration: none; background: #f8f9fa; transition: all 0.3s ease;">
+                                <i class="fas fa-user-md me-3" style="color: #666; font-size: 1.1rem;"></i>
+                                <span style="color: #666; font-weight: 500;">Plastic Surgery</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Specialist Clinics -->
+                    <div class="specialist-clinics mb-4" style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);">
+                        <h4 class="mb-4" style="font-weight: 700; color: #2d3e50;">Specialist Clinics</h4>
+                        
+                        <!-- Obstetrics and Gynaecology -->
+                        <div class="clinic-item mb-4 pb-3" style="border-bottom: 1px solid #eee;">
+                            <h6 style="font-weight: 600; color: #1a1a1a; margin-bottom: 8px; font-size: 0.95rem;">Obstetrics and Gynaecology</h6>
+                            <p style="color: #666; font-size: 0.85rem; margin-bottom: 4px;">Wednesday, Friday & Saturday</p>
+                            <p style="color: #84a33f; font-weight: 600; font-size: 0.9rem; margin: 0;">8:00 AM - 2:00 PM</p>
+                        </div>
+
+                        <!-- Pediatric Clinic -->
+                        <div class="clinic-item mb-4 pb-3" style="border-bottom: 1px solid #eee;">
+                            <h6 style="font-weight: 600; color: #1a1a1a; margin-bottom: 8px; font-size: 0.95rem;">Pediatric Clinic</h6>
+                            <p style="color: #666; font-size: 0.85rem; margin-bottom: 4px;">Saturday</p>
+                            <p style="color: #84a33f; font-weight: 600; font-size: 0.9rem; margin: 0;">8:00 AM - 2:00 PM</p>
+                        </div>
+
+                        <!-- Ear, Nose & Throat -->
+                        <div class="clinic-item mb-4 pb-3" style="border-bottom: 1px solid #eee;">
+                            <h6 style="font-weight: 600; color: #1a1a1a; margin-bottom: 8px; font-size: 0.95rem;">Ear, Nose & Throat</h6>
+                            <p style="color: #666; font-size: 0.85rem; margin-bottom: 4px;">Wednesday</p>
+                            <p style="color: #84a33f; font-weight: 600; font-size: 0.9rem; margin: 0;">4:00 PM - 6:00 PM</p>
+                        </div>
+
+                        <!-- Urology -->
+                        <div class="clinic-item mb-4 pb-3" style="border-bottom: 1px solid #eee;">
+                            <h6 style="font-weight: 600; color: #1a1a1a; margin-bottom: 8px; font-size: 0.95rem;">Urology</h6>
+                            <p style="color: #666; font-size: 0.85rem; margin-bottom: 4px;">By Appointment Only</p>
+                            <p style="color: #84a33f; font-weight: 600; font-size: 0.9rem; margin: 0;">Call: +233 24 571 7681</p>
+                        </div>
+
+                        <!-- Geriatric / Elderly Care -->
+                        <div class="clinic-item mb-4 pb-3" style="border-bottom: 1px solid #eee;">
+                            <h6 style="font-weight: 600; color: #1a1a1a; margin-bottom: 8px; font-size: 0.95rem;">Geriatric / Elderly Care</h6>
+                            <p style="color: #666; font-size: 0.85rem; margin-bottom: 4px;">Tuesday & Thursday</p>
+                            <p style="color: #84a33f; font-weight: 600; font-size: 0.9rem; margin: 0;">Tue: 2:00 PM - 5:00 PM | Thu: 8:00 AM - 4:00 PM</p>
+                        </div>
+
+                        <!-- Orthopedics -->
+                        <div class="clinic-item mb-4">
+                            <h6 style="font-weight: 600; color: #1a1a1a; margin-bottom: 8px; font-size: 0.95rem;">Orthopedics</h6>
+                            <p style="color: #666; font-size: 0.85rem; margin-bottom: 4px;">Tuesday</p>
+                            <p style="color: #84a33f; font-weight: 600; font-size: 0.9rem; margin: 0;">2:00 PM - 8:00 PM</p>
+                        </div>
+                    </div>
+
+                    <!-- Appointment Booking Card -->
+                    <div class="contact-card" style="background: #a8207a; border-radius: 12px; padding: 32px; color: white; box-shadow: 0 4px 12px rgba(168, 32, 122, 0.2);">
+                        <h4 class="mb-3" style="font-weight: 700; color: white;">Book an Appointment</h4>
+                        <p class="mb-4" style="opacity: 0.95;">Ready to schedule your consultation? Contact us today.</p>
+                        <div class="contact-info mb-3">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-phone me-3" style="font-size: 1.2rem;"></i>
+                                <div>
+                                    <small style="opacity: 0.8;">Call Us</small>
+                                    <p class="mb-0" style="font-weight: 600;">0241850091</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-envelope me-3" style="font-size: 1.2rem;"></i>
+                                <div>
+                                    <small style="opacity: 0.8;">Email</small>
+                                    <p class="mb-0" style="font-weight: 600;">info@metrohealthgh.com</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-map-marker-alt me-3" style="font-size: 1.2rem;"></i>
+                                <div>
+                                    <small style="opacity: 0.8;">Location</small>
+                                    <p class="mb-0" style="font-weight: 600;">4 Barekese Road, Kumasi</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="{{ route('contact') }}" class="btn btn-light w-100" style="padding: 13px; font-weight: 600; border-radius: 8px; transition: all 0.3s ease;">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -214,15 +347,13 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="section-padding" style="background: #f9f9f9; padding: 70px 0;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center" data-aos="fade-up">
-                    <h2>Ready to Book Your Service?</h2>
-                    <p>Experience professional hair care that elevates your crown. Book your appointment today!</p>
-                    <a href="{{ route('booking.index') }}" class="btn btn-white-custom btn-lg">
-                        <i class="fas fa-calendar-check me-2"></i>Book Appointment Now
-                    </a>
+                    <h2 class="mb-4" style="font-size: 2.5rem; font-weight: 800; color: #2d3e50;">Ready to Experience Quality Healthcare?</h2>
+                    <p class="lead mb-4" style="font-size: 1.1rem; line-height: 1.8; color: #666;">Contact Metro Health Hospital today to schedule your appointment or learn more about our comprehensive medical services.</p>
+                    <a href="{{ route('contact') }}" class="btn btn-lg" style="background: #a8207a; color: white; padding: 15px 40px; border-radius: 10px; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Contact Us <i class="fas fa-arrow-right ms-2"></i></a>
                 </div>
             </div>
         </div>
@@ -240,5 +371,62 @@
             offset: 50
         });
     </script>
+
+    <style>
+    .section-padding {
+        padding: 70px 0;
+    }
+
+    .service-card {
+        transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .service-card .btn {
+        transition: all 0.3s ease;
+    }
+
+    .service-card:hover .btn {
+        transform: translateX(5px);
+    }
+
+    h1, h2, h3, h4, h5 {
+        letter-spacing: -0.02em;
+    }
+
+    @media (max-width: 991px) {
+        .page-hero {
+            padding: 90px 0 60px !important;
+        }
+
+        .page-hero h1 {
+            font-size: 2.3rem !important;
+        }
+
+        .service-icon-large {
+            width: 100px !important;
+            height: 100px !important;
+            font-size: 3rem !important;
+        }
+
+        .section-padding {
+            padding: 50px 0;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .page-hero h1 {
+            font-size: 1.9rem !important;
+        }
+
+        .service-card {
+            padding: 25px !important;
+        }
+    }
+    </style>
 </body>
 </html>

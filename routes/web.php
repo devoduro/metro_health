@@ -20,22 +20,121 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 // Who We Are
 Route::get('/who-we-are', function () {
-    return view('who-we-are');
+    return view('who-we-are-redesign');
 })->name('who-we-are');
 
 // Our Team
 Route::get('/our-team', function () {
-    return view('team');
+    return view('our-team-redesign');
 })->name('team');
+
+// Team Member Detail
+Route::get('/teams/{slug}', function ($slug) {
+    $teamMembers = [
+        [
+            'name' => 'Mr. Stephen Tawiah',
+            'position' => 'Managing Director',
+            'image' => asset('images/team/stephen-tawiah.png'),
+            'specialty' => 'Leading Metro Health Hospital with strategic vision and excellence.',
+            'phone' => '0241850091',
+            'email' => 'md@metrohealthgh.com',
+            'address' => '4 Barekese Road, Kumasi',
+            'bio' => 'Mr. Stephen Tawiah serves as the Managing Director of Metro Health Hospital, providing strategic leadership and overseeing all operations. His vision and dedication ensure the hospital maintains its commitment to excellence in healthcare delivery.'
+        ],
+        [
+            'name' => 'Dr. (Mrs) Phyllis Tawiah',
+            'position' => 'Medical Director',
+            'image' => asset('images/team/Dr(Mrs)-Phyllis-Tawiah.png'),
+            'specialty' => 'Ensuring clinical excellence across all medical departments.',
+            'phone' => '0241850091',
+            'email' => 'medical.director@metrohealthgh.com',
+            'address' => '4 Barekese Road, Kumasi',
+            'bio' => 'Dr. (Mrs) Phyllis Tawiah is the Medical Director of Metro Health Hospital, bringing extensive experience in healthcare management and clinical excellence. She leads our medical team with a commitment to providing world-class patient care.'
+        ],
+        [
+            'name' => 'Veronica Sabeng Poku',
+            'position' => 'Administrator',
+            'image' => asset('images/team/Veronica_Sabeng_Poku.png'),
+            'specialty' => 'Managing hospital operations with efficiency and dedication.',
+            'phone' => '0248555596',
+            'email' => 'admin@metrohealthgh.com',
+            'address' => '4 Barekese Road, Kumasi',
+            'bio' => 'Veronica Sabeng Poku serves as the Administrator of Metro Health Hospital, managing day-to-day operations and ensuring smooth functioning of all hospital departments. Her organizational skills and dedication contribute to excellent patient care.'
+        ],
+        [
+            'name' => 'Dr. Odeefour Ofori Amanfo',
+            'position' => 'Deputy Administrator',
+            'image' => asset('images/team/Dr_Odeefour_Ofori_Amanfo.png'),
+            'specialty' => 'Supporting hospital administration with medical expertise and leadership.',
+            'phone' => '0264840859',
+            'email' => 'deputy.admin@metrohealthgh.com',
+            'address' => '4 Barekese Road, Kumasi',
+            'bio' => 'Dr. Odeefour Ofori Amanfo serves as the Deputy Administrator of Metro Health Hospital, supporting administrative operations and ensuring quality healthcare delivery. His medical expertise and administrative skills make him an invaluable member of the leadership team.'
+        ],
+        [
+            'name' => 'Mary Ann Koomson',
+            'position' => 'Human Resource Manager',
+            'image' => asset('images/team/Mary_Ann_Koomson.png'),
+            'specialty' => 'Building and developing our exceptional healthcare team.',
+            'phone' => '0241850091',
+            'email' => 'hr@metrohealthgh.com',
+            'address' => '4 Barekese Road, Kumasi',
+            'bio' => 'Mary Ann Koomson serves as the Human Resource Manager of Metro Health Hospital, managing recruitment, training, and staff development. She ensures Metro Health attracts and retains top medical talent and maintains a positive work environment.'
+        ]
+    ];
+
+    $member = collect($teamMembers)->first(function ($member) use ($slug) {
+        return Str::slug($member['name']) === $slug;
+    });
+
+    if (!$member) {
+        abort(404);
+    }
+
+    return view('team-member-detail', ['member' => $member]);
+})->name('team.show');
 
 // Gallery
 Route::get('/gallery', function () {
-    return view('gallery');
+    return view('our-gallery-redesign');
 })->name('gallery');
 
 // Services
 Route::prefix('services')->name('services.')->group(function () {
     Route::get('/', [ServiceController::class, 'index'])->name('index');
+    Route::get('/general-practice', function () {
+        return view('services.general-practice');
+    })->name('general-practice');
+    Route::get('/general-surgery', function () {
+        return view('services.general-surgery');
+    })->name('general-surgery');
+    Route::get('/obstetrics-gynaecology', function () {
+        return view('services.obstetrics-gynaecology');
+    })->name('obstetrics-gynaecology');
+    Route::get('/geriatric-care', function () {
+        return view('services.geriatric-care');
+    })->name('geriatric-care');
+    Route::get('/neurology-neurosurgery', function () {
+        return view('services.neurology-neurosurgery');
+    })->name('neurology-neurosurgery');
+    Route::get('/paediatrics', function () {
+        return view('services.paediatrics');
+    })->name('paediatrics');
+    Route::get('/urology', function () {
+        return view('services.urology');
+    })->name('urology');
+    Route::get('/orthopaedic', function () {
+        return view('services.orthopaedic');
+    })->name('orthopaedic');
+    Route::get('/ent-care', function () {
+        return view('services.ent-care');
+    })->name('ent-care');
+    Route::get('/eye-care', function () {
+        return view('services.eye-care');
+    })->name('eye-care');
+    Route::get('/plastic-surgery', function () {
+        return view('services.plastic-surgery');
+    })->name('plastic-surgery');
     Route::get('/{slug}', [ServiceController::class, 'show'])->name('show');
 });
 
