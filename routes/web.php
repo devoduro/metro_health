@@ -174,6 +174,14 @@ Route::prefix('news')->name('news-update.')->group(function () {
     Route::get('/{slug}', [BlogController::class, 'show'])->name('show');
 });
 
+// News & Articles Page
+Route::get('/news-articles', function () {
+    $posts = \App\Models\BlogPost::where('published', true)
+        ->orderBy('published_at', 'desc')
+        ->paginate(9);
+    return view('news-articles', compact('posts'));
+})->name('news-articles');
+
 // Admin Routes
 use App\Http\Controllers\Admin\AdminController;
 

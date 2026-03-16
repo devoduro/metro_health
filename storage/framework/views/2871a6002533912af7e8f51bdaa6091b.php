@@ -46,7 +46,7 @@
                             Resources
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="resourcesDropdown">
-                            <li><a class="dropdown-item" href="#">News & Articles</a></li>
+                            <li><a class="dropdown-item" href="<?php echo e(route('news-articles')); ?>">News & Articles</a></li>
                             <li><a class="dropdown-item" href="#">FAQs</a></li>
                       
                         </ul>

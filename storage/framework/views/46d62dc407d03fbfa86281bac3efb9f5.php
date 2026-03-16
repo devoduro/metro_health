@@ -674,54 +674,9 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="<?php echo e(asset('images/2026-01-12-J8o94jxc.png')); ?>" alt="Ashlocs Logo" class="footer-logo mb-3">
-                    <p style="color: rgba(255, 255, 255, 0.7);">
-                        Professional hair care specialists offering dreadlocks, braids, haircuts and training services across the UK.
-                    </p>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/share/183aATKKiS/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/ashlocs" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@ashlocs_dreadlocks" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-6 mb-4 mb-lg-0">
-                    <h5>Quick Links</h5>
-                    <a href="<?php echo e(route('home')); ?>" class="footer-link">Home</a>
-                    <a href="<?php echo e(route('about')); ?>" class="footer-link">About Us</a>
-                    <a href="<?php echo e(route('services.index')); ?>" class="footer-link">Services</a>
-                    <a href="<?php echo e(route('contact')); ?>" class="footer-link">Contact</a>
-                </div>
-                <div class="col-lg-2 col-6 mb-4 mb-lg-0">
-                    <h5>Services</h5>
-                    <?php $__currentLoopData = $services->take(4); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <?php if($service->slug): ?>
-                    <a href="<?php echo e(route('services.show', $service->slug)); ?>" class="footer-link"><?php echo e($service->title); ?></a>
-                    <?php endif; ?>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                </div>
-                <div class="col-lg-4">
-                    <h5>Contact Us</h5>
-                    <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 0.5rem;">
-                        <i class="fas fa-phone me-2"></i>+447724500349
-                    </p>
-                    <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 0.5rem;">
-                        <i class="fas fa-envelope me-2"></i>bookings@ashlocs.co.uk
-                    </p>
-                    <p style="color: rgba(255, 255, 255, 0.7);">
-                        <i class="fas fa-map-marker-alt me-2"></i>UK-wide Home Service
-                    </p>
-                </div>
-            </div>
-            <hr style="border-color: rgba(255, 255, 255, 0.1); margin: 40px 0 20px;">
-            <div class="text-center" style="color: rgba(255, 255, 255, 0.6);">
-                <p class="mb-0">&copy; <span id="year"></span> Ashlocs. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+   
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
