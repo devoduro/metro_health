@@ -41,8 +41,8 @@
                 <li class="nav-item"><a class="nav-link <?php echo e(request()->routeIs('news-update.*') ? 'active' : ''); ?>" href="<?php echo e(route('news-update.index')); ?>">News & Articles</a></li>
                 <li class="nav-item"><a class="nav-link <?php echo e(request()->routeIs('contact') ? 'active' : ''); ?>" href="<?php echo e(route('contact')); ?>">Contact Us</a></li>
                 <li class="nav-item">
-                    <a href="<?php echo e(route('booking.index')); ?>" class="btn btn-primary-custom btn-sm">
-                        <i class="fas fa-calendar-check me-2"></i>Book Appointment
+                    <a href="<?php echo e(route('booking.index')); ?>" class="btn btn-primary-custom btn-sm text-nowrap">
+                        <i class="fas fa-calendar-check me-1"></i>Book Appointment
                     </a>
                 </li>
                 <li class="nav-item ms-lg-3">

@@ -416,7 +416,7 @@
         <div class="container">
             <!-- Section Header -->
             <div class="text-center mb-5" data-aos="fade-up">
-                <span class="news-badge">LATEST NEWS</span>
+              
                 <h2 class="news-main-title">News & Articles</h2>
                 <p class="news-subtitle">
                     Stay informed with the latest health news, medical breakthroughs, and wellness tips from our expert team.

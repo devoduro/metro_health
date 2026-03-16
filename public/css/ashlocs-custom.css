@@ -6,7 +6,7 @@
     --ashlocs-light: #F8F9FA;
     --ashlocs-white: #FFFFFF;
     --ashlocs-gray: #6C757D;
-    --ashlocs-gradient: linear-gradient(135deg, #F26522 0%, #FF8C42 100%);
+    --ashlocs-gradient: linear-gradient(135deg, #7ba428 0%, #567d07 100%);
     --metro-green: #7ba428;
     --metro-purple: #a8207a;
 }
@@ -145,6 +145,8 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
     display: flex;
     align-items: center;
+    padding: 0;
+    margin-left: -50px;
 }
 
 .navbar-logo {

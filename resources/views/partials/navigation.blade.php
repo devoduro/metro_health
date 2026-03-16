@@ -41,8 +41,8 @@
                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('news-update.*') ? 'active' : '' }}" href="{{ route('news-update.index') }}">News & Articles</a></li>
                 <li class="nav-item"><a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact Us</a></li>
                 <li class="nav-item">
-                    <a href="{{ route('booking.index') }}" class="btn btn-primary-custom btn-sm">
-                        <i class="fas fa-calendar-check me-2"></i>Book Appointment
+                    <a href="{{ route('booking.index') }}" class="btn btn-primary-custom btn-sm text-nowrap">
+                        <i class="fas fa-calendar-check me-1"></i>Book Appointment
                     </a>
                 </li>
                 <li class="nav-item ms-lg-3">
