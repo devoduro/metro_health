@@ -7,13 +7,13 @@
             <!-- About Section -->
             <div class="col-lg-4 mb-4 mb-lg-0">
                 <a href="{{ route('home') }}" class="d-block mb-3">
-                    <img src="{{ asset('images/logo.png') }}" alt="Metro Health Hospital Logo" style="height: 60px; filter: brightness(0) invert(1);">
+                    <img src="{{ asset('images/logo/footer_logo.png') }}" alt="Metro Health Hospital Logo" style="height: 60px;">
                 </a>
                 <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px;">
                     At Metro Health, our mission is to provide patient-centered healthcare marked by empathy, excellence, and a genuine passion for improving the well-being of every individual who walks through our doors. While we are especially recognized for our exceptional care for the elderly, our team of highly skilled and experienced medical professionals spans a wide range of specialties.
                 </p>
                 <div class="social-icons" style="margin-top: 20px;">
-                    <a href="#" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; color: white; margin-right: 10px; transition: all 0.3s ease; text-decoration: none;">
+                    <a href="http://web.facebook.com/profile.php?id=100076176886846&rdid=X9ySH7o7NK" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; color: white; margin-right: 10px; transition: all 0.3s ease; text-decoration: none;">
                         <i class="fab fa-facebook-f"></i>
                     </a>
                     <a href="#" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; color: white; margin-right: 10px; transition: all 0.3s ease; text-decoration: none;">

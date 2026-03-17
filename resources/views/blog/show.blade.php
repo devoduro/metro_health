@@ -1,1139 +1,563 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ $post->title }} - Metro Health Hospital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/ashlocs-custom.css') }}">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
 
-@section('title', $post->title . ' - Metro Health Hospital')
+        .page-hero {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(59, 130, 246, 0.85)), url('https://images.unsplash.com/photo-1504439468489-c8920d796a29?w=1920') center/cover;
+            padding: 120px 0 80px;
+            position: relative;
+        }
 
-@section('content')
-<!-- Elegant Hero Header with Overlay -->
-<section class="blog-hero-section">
-    <div class="hero-overlay"></div>
-    <div class="hero-pattern"></div>
-    <div class="container position-relative">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <nav aria-label="breadcrumb" class="blog-breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('home') }}"><i class="fas fa-home"></i> Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('news-update.index') }}">News & Articles</a></li>
-                        <li class="breadcrumb-item active">Article</li>
-                    </ol>
-                </nav>
-                
-                @if($post->category)
-                <div class="article-category-badge">
-                    <i class="fas fa-bookmark"></i> {{ $post->category }}
-                </div>
-                @endif
-                
-                <h1 class="hero-title">{{ $post->title }}</h1>
-                
-                <div class="article-meta-info">
-                    <div class="meta-item">
-                        <div class="author-avatar">
-                            <i class="fas fa-user-md"></i>
-                        </div>
-                        <div class="meta-content">
-                            <span class="meta-label">Written by</span>
-                            <span class="meta-value">{{ $post->author }}</span>
-                        </div>
-                    </div>
-                    <div class="meta-divider"></div>
-                    <div class="meta-item">
-                        <i class="far fa-calendar-alt"></i>
-                        <span class="meta-value">{{ $post->published_at ? $post->published_at->format('F d, Y') : 'Recent' }}</span>
-                    </div>
-                    <div class="meta-divider"></div>
-                    <div class="meta-item">
-                        <i class="far fa-clock"></i>
-                        <span class="meta-value">{{ ceil(str_word_count($post->content) / 200) }} min read</span>
-                    </div>
+        .article-section {
+            padding: 70px 0;
+            background: #f8f9fa;
+        }
+
+        .article-content {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .article-featured-image {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 20px 0;
+            border-bottom: 2px solid #e9ecef;
+            margin-bottom: 30px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .meta-item i {
+            color: #3b82f6;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .article-body {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #333;
+        }
+
+        .article-body p {
+            margin-bottom: 20px;
+        }
+
+        .article-body h2, .article-body h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+
+        .share-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .share-section h5 {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .share-btn-facebook {
+            background: #1877f2;
+            color: white;
+        }
+
+        .share-btn-twitter {
+            background: #1da1f2;
+            color: white;
+        }
+
+        .share-btn-linkedin {
+            background: #0a66c2;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sidebar Styles */
+        .sidebar-widget {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .sidebar-widget h5 {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .sidebar-widget h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: #3b82f6;
+        }
+
+        .search-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 0.95rem;
+        }
+
+        .search-form button {
+            padding: 12px 20px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-form button:hover {
+            background: #1e3a8a;
+        }
+
+        .category-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            border-radius: 10px;
+            background: #f8f9fa;
+            text-decoration: none;
+            color: #666;
+            transition: all 0.3s ease;
+        }
+
+        .category-item:hover {
+            background: #3b82f6;
+            color: white;
+            padding-left: 20px;
+        }
+
+        .category-count {
+            background: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .category-item:hover .category-count {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .recent-post-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .recent-post-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .recent-post-thumb {
+            flex-shrink: 0;
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .recent-post-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .recent-post-content h6 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .recent-post-content h6 a {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .recent-post-content h6 a:hover {
+            color: #3b82f6;
+        }
+
+        .post-date {
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        .related-articles {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .related-article-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .related-article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .related-article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .related-article-body {
+            padding: 25px;
+        }
+
+        .related-article-body h5 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .related-article-body h5 a {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .related-article-body h5 a:hover {
+            color: #3b82f6;
+        }
+
+        @media (max-width: 768px) {
+            .article-content {
+                padding: 30px 20px;
+            }
+
+            .article-title {
+                font-size: 1.8rem;
+            }
+
+            .article-body {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    @include('partials.top_header')
+    @include('partials.navigation')
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center text-white" data-aos="fade-up">
+                    <h1 style="font-size: 3rem; color: white; font-weight: 800; margin-bottom: 4px; margin-top: 40px;">News & Articles</h1>
+                    <p style="font-size: 1.2rem; opacity: 0.95;">Stay informed with the latest health news and medical insights</p>
+                    <nav aria-label="breadcrumb" style="margin-top: 20px;">
+                        <ol class="breadcrumb justify-content-center" style="background: transparent;">
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}" style="color: white; text-decoration: none;">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('news-articles') }}" style="color: white; text-decoration: none;">News</a></li>
+                            <li class="breadcrumb-item active" style="color: rgba(255,255,255,0.8);">{{ Str::limit($post->title, 40) }}</li>
+                        </ol>
+                    </nav>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Main Content Section -->
-<section class="blog-content-section">
-    <div class="container">
-        <div class="row">
-            <!-- Main Article Content -->
-            <div class="col-lg-8">
-                <article class="blog-article-card">
-                    <!-- Featured Image with Elegant Frame -->
-                    @if($post->image)
-                    <div class="featured-image-wrapper">
-                        <div class="image-frame">
-                            <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" class="featured-image">
-                            <div class="image-overlay"></div>
+    <!-- Article Section -->
+    <section class="article-section">
+        <div class="container">
+            <div class="row">
+                <!-- Main Content -->
+                <div class="col-lg-8">
+                    <article class="article-content" data-aos="fade-up">
+                        @if($post->category)
+                        <span class="category-badge">{{ strtoupper($post->category) }}</span>
+                        @endif
+
+                        <h1 class="article-title">{{ $post->title }}</h1>
+
+                        <div class="article-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-user"></i>
+                                <span>{{ $post->author ?? 'Metro Health Team' }}</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>{{ $post->published_at ? $post->published_at->format('F d, Y') : 'Recent' }}</span>
+                            </div>
+                            @if($post->category)
+                            <div class="meta-item">
+                                <i class="fas fa-folder"></i>
+                                <span>{{ $post->category }}</span>
+                            </div>
+                            @endif
+                        </div>
+
+                        @if($post->image)
+                        <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" class="article-featured-image" onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200'">
+                        @endif
+
+                        <div class="article-body">
+                            {!! nl2br(e($post->content)) !!}
+                        </div>
+
+                        <!-- Share Section -->
+                        <div class="share-section">
+                            <h5>Share this article</h5>
+                            <div class="share-buttons">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->url()) }}" target="_blank" class="share-btn share-btn-facebook">
+                                    <i class="fab fa-facebook-f"></i> Facebook
+                                </a>
+                                <a href="https://twitter.com/intent/tweet?url={{ urlencode(request()->url()) }}&text={{ urlencode($post->title) }}" target="_blank" class="share-btn share-btn-twitter">
+                                    <i class="fab fa-twitter"></i> Twitter
+                                </a>
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ urlencode(request()->url()) }}&title={{ urlencode($post->title) }}" target="_blank" class="share-btn share-btn-linkedin">
+                                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Related Articles -->
+                    @if($relatedPosts && $relatedPosts->count() > 0)
+                    <div class="related-articles" data-aos="fade-up">
+                        <h3 style="font-size: 2rem; font-weight: 800; color: #1a1a1a; margin-bottom: 30px;">Related Articles</h3>
+                        <div class="row g-4">
+                            @foreach($relatedPosts as $relatedPost)
+                            <div class="col-md-6">
+                                <div class="related-article-card">
+                                    @if($relatedPost->image)
+                                    <img src="{{ asset('storage/' . $relatedPost->image) }}" alt="{{ $relatedPost->title }}" class="related-article-image" onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400'">
+                                    @else
+                                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400" alt="{{ $relatedPost->title }}" class="related-article-image">
+                                    @endif
+                                    <div class="related-article-body">
+                                        <h5><a href="{{ route('news-update.show', $relatedPost->slug) }}">{{ $relatedPost->title }}</a></h5>
+                                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">{{ Str::limit($relatedPost->excerpt, 100) }}</p>
+                                        <div class="meta-item">
+                                            <i class="fas fa-calendar"></i>
+                                            <span>{{ $relatedPost->published_at ? $relatedPost->published_at->format('M d, Y') : 'Recent' }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
                         </div>
                     </div>
                     @endif
+                </div>
 
-                    <!-- Article Content -->
-                    <div class="article-body">
-                        <div class="content-wrapper">
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <!-- Search Widget -->
+                    <div class="sidebar-widget" data-aos="fade-left">
+                        <h5>Search Articles</h5>
+                        <form action="{{ route('news-articles') }}" method="GET" class="search-form">
+                            <input type="text" name="search" placeholder="Search articles..." value="{{ request('search') }}">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+
+                    <!-- Categories Widget -->
+                    <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="100">
+                        <h5>Categories</h5>
+                        <div>
+                            <a href="{{ route('news-articles') }}?category=Health Tips" class="category-item">
+                                <span>Health Tips</span>
+                                <span class="category-count">12</span>
+                            </a>
+                            <a href="{{ route('news-articles') }}?category=Hospital News" class="category-item">
+                                <span>Hospital News</span>
+                                <span class="category-count">8</span>
+                            </a>
+                            <a href="{{ route('news-articles') }}?category=Medical Insights" class="category-item">
+                                <span>Medical Insights</span>
+                                <span class="category-count">15</span>
+                            </a>
+                            <a href="{{ route('news-articles') }}?category=Patient Care" class="category-item">
+                                <span>Patient Care</span>
+                                <span class="category-count">10</span>
+                            </a>
+                            <a href="{{ route('news-articles') }}?category=Events" class="category-item">
+                                <span>Events</span>
+                                <span class="category-count">6</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Recent Posts Widget -->
+                    <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="200">
+                        <h5>Recent Posts</h5>
+                        <div>
                             @php
-                                $content = e($post->content);
-                                $content = preg_replace(
-                                    '#(https?://[^\s<]+)#i',
-                                    '<a href="$1" target="_blank" rel="noopener noreferrer" class="content-link">$1</a>',
-                                    $content
-                                );
-                                $content = nl2br($content);
+                                $recentPosts = \App\Models\BlogPost::where('published', true)
+                                    ->where('id', '!=', $post->id)
+                                    ->orderBy('published_at', 'desc')
+                                    ->take(4)
+                                    ->get();
                             @endphp
-                            {!! $content !!}
-                        </div>
-                    </div>
 
-                    <!-- Article Footer -->
-                    <div class="article-footer">
-                        <!-- Tags -->
-                        @if($post->category)
-                        <div class="article-tags">
-                            <span class="tags-label"><i class="fas fa-tags"></i> Tags:</span>
-                            <a href="{{ route('news-update.index') }}?category={{ $post->category }}" class="tag-item">{{ $post->category }}</a>
-                        </div>
-                        @endif
-
-                        <!-- Social Share -->
-                        <div class="social-share-section">
-                            <h5 class="share-title"><i class="fas fa-share-alt"></i> Share This Article</h5>
-                            <div class="share-buttons-elegant">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}" target="_blank" class="share-btn facebook">
-                                    <i class="fab fa-facebook-f"></i>
-                                    <span>Facebook</span>
-                                </a>
-                                <a href="https://twitter.com/intent/tweet?url={{ urlencode(url()->current()) }}&text={{ urlencode($post->title) }}" target="_blank" class="share-btn twitter">
-                                    <i class="fab fa-twitter"></i>
-                                    <span>Twitter</span>
-                                </a>
-                                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode(url()->current()) }}" target="_blank" class="share-btn linkedin">
-                                    <i class="fab fa-linkedin-in"></i>
-                                    <span>LinkedIn</span>
-                                </a>
-                                <a href="https://wa.me/?text={{ urlencode($post->title . ' ' . url()->current()) }}" target="_blank" class="share-btn whatsapp">
-                                    <i class="fab fa-whatsapp"></i>
-                                    <span>WhatsApp</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Navigation -->
-                        <div class="article-navigation">
-                            <a href="{{ route('news-update.index') }}" class="btn-back-elegant">
-                                <i class="fas fa-arrow-left"></i>
-                                <span>Back to All News</span>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <!-- Elegant Sidebar -->
-            <div class="col-lg-4">
-                <aside class="blog-sidebar">
-                    <!-- Services Widget -->
-                    <div class="sidebar-widget services-widget">
-                        <div class="widget-header">
-                            <div class="widget-icon">
-                                <i class="fas fa-heartbeat"></i>
-                            </div>
-                            <h4 class="widget-title">Our Services</h4>
-                        </div>
-                        <div class="widget-body">
-                            <ul class="elegant-services-list">
-                                @php
-                                    $services = \App\Models\Service::active()->ordered()->take(6)->get();
-                                @endphp
-                                @foreach($services as $service)
-                                <li class="service-item">
-                                    <a href="{{ route('services.show', $service->slug) }}" class="service-link">
-                                        <span class="service-icon"><i class="fas fa-chevron-right"></i></span>
-                                        <span class="service-name">{{ $service->title }}</span>
-                                        <span class="service-arrow"><i class="fas fa-arrow-right"></i></span>
-                                    </a>
-                                </li>
+                            @if($recentPosts->count() > 0)
+                                @foreach($recentPosts as $recentPost)
+                                <div class="recent-post-item">
+                                    <div class="recent-post-thumb">
+                                        @if($recentPost->image)
+                                            <img src="{{ asset('storage/' . $recentPost->image) }}" alt="{{ $recentPost->title }}" onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=200'">
+                                        @else
+                                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=200" alt="{{ $recentPost->title }}">
+                                        @endif
+                                    </div>
+                                    <div class="recent-post-content">
+                                        <h6><a href="{{ route('news-update.show', $recentPost->slug) }}">{{ Str::limit($recentPost->title, 50) }}</a></h6>
+                                        <span class="post-date">
+                                            <i class="far fa-calendar me-1"></i>{{ $recentPost->published_at ? $recentPost->published_at->format('M d, Y') : 'Recent' }}
+                                        </span>
+                                    </div>
+                                </div>
                                 @endforeach
-                            </ul>
-                            <a href="{{ route('services.index') }}" class="widget-btn">
-                                View All Services
-                                <i class="fas fa-long-arrow-alt-right"></i>
-                            </a>
+                            @else
+                                <p style="color: #666; font-size: 0.9rem; margin: 0;">No recent posts available.</p>
+                            @endif
                         </div>
                     </div>
 
-                    <!-- Recent News Widget -->
-                    <div class="sidebar-widget news-widget">
-                        <div class="widget-header">
-                            <div class="widget-icon">
-                                <i class="far fa-newspaper"></i>
+                    <!-- Newsletter Widget -->
+                    <div class="sidebar-widget" style="background: linear-gradient(135deg, #3b82f6, #1e3a8a); color: white;" data-aos="fade-left" data-aos-delay="300">
+                        <h5 style="color: white;">Subscribe to Newsletter</h5>
+                        <p style="font-size: 0.9rem; margin-bottom: 20px; opacity: 0.95;">Get the latest health tips and news delivered to your inbox.</p>
+                        <form action="#" method="POST">
+                            @csrf
+                            <div class="mb-3">
+                                <input type="email" name="email" class="form-control" placeholder="Your email address" required style="padding: 12px; border-radius: 10px; border: none;">
                             </div>
-                            <h4 class="widget-title">Recent News</h4>
-                        </div>
-                        <div class="widget-body">
-                            <div class="elegant-news-list">
-                                @if(isset($relatedPosts) && $relatedPosts->count() > 0)
-                                    @foreach($relatedPosts as $related)
-                                    <div class="news-item">
-                                        <a href="{{ route('news-update.show', $related->slug) }}" class="news-link">
-                                            @if($related->image)
-                                            <div class="news-thumbnail">
-                                                <img src="{{ asset('storage/' . $related->image) }}" alt="{{ $related->title }}">
-                                                <div class="thumbnail-overlay"></div>
-                                            </div>
-                                            @endif
-                                            <div class="news-content">
-                                                <h6 class="news-title">{{ Str::limit($related->title, 65) }}</h6>
-                                                <div class="news-meta">
-                                                    <i class="far fa-calendar"></i>
-                                                    <span>{{ $related->published_at ? $related->published_at->format('M d, Y') : 'Recent' }}</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    @endforeach
-                                @else
-                                    @php
-                                        $recentPosts = \App\Models\BlogPost::published()
-                                            ->where('id', '!=', $post->id)
-                                            ->latest('published_at')
-                                            ->take(4)
-                                            ->get();
-                                    @endphp
-                                    @foreach($recentPosts as $recent)
-                                    <div class="news-item">
-                                        <a href="{{ route('news-update.show', $recent->slug) }}" class="news-link">
-                                            @if($recent->image)
-                                            <div class="news-thumbnail">
-                                                <img src="{{ asset('storage/' . $recent->image) }}" alt="{{ $recent->title }}">
-                                                <div class="thumbnail-overlay"></div>
-                                            </div>
-                                            @endif
-                                            <div class="news-content">
-                                                <h6 class="news-title">{{ Str::limit($recent->title, 65) }}</h6>
-                                                <div class="news-meta">
-                                                    <i class="far fa-calendar"></i>
-                                                    <span>{{ $recent->published_at ? $recent->published_at->format('M d, Y') : 'Recent' }}</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    @endforeach
-                                @endif
-                            </div>
-                            <a href="{{ route('news-update.index') }}" class="widget-btn">
-                                View All News
-                                <i class="fas fa-long-arrow-alt-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </aside>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Call to Action Section -->
-<section class="cta-section">
-    <div class="cta-overlay"></div>
-    <div class="container position-relative">
-        <div class="row justify-content-center">
-            <div class="col-lg-10 text-center">
-                <div class="cta-content">
-                    <h2 class="cta-title">Ready to Experience Quality Healthcare?</h2>
-                    <p class="cta-subtitle">Our team of experienced healthcare professionals is ready to serve you</p>
-                    
-                    <div class="cta-contact">
-                        <div class="cta-phone">
-                            <i class="fas fa-phone-alt"></i>
-                            <div class="phone-content">
-                                <span class="phone-label">Call Us Now</span>
-                                <a href="tel:+233241850091" class="phone-number">+233 24 185 0091</a>
-                            </div>
-                        </div>
-                        
-                        <div class="cta-divider">
-                            <span>OR</span>
-                        </div>
-                        
-                        <div class="cta-button-wrapper">
-                            <a href="{{ route('booking.index') }}" class="btn-appointment">
-                                <i class="fas fa-calendar-check"></i>
-                                <span>Schedule Your Appointment</span>
-                            </a>
-                        </div>
+                            <button type="submit" class="btn btn-light w-100" style="padding: 12px; font-weight: 600; border-radius: 10px;">
+                                Subscribe Now <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-@endsection
-
-@push('styles')
-<style>
-/* Blog Hero Section */
-.blog-hero-section {
-    position: relative;
-    background: linear-gradient(135deg, #a8207a 0%, #7ba428 100%);
-    padding: 140px 0 80px;
-    overflow: hidden;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-}
-
-.hero-pattern {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-    z-index: 1;
-}
-
-.blog-hero-section .container {
-    z-index: 2;
-}
-
-.blog-breadcrumb .breadcrumb {
-    background: transparent;
-    padding: 0;
-    margin-bottom: 25px;
-}
-
-.blog-breadcrumb .breadcrumb-item a {
-    color: rgba(255, 255, 255, 0.85);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-}
-
-.blog-breadcrumb .breadcrumb-item a:hover {
-    color: white;
-}
-
-.blog-breadcrumb .breadcrumb-item.active {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.blog-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
-    color: rgba(255, 255, 255, 0.6);
-    content: "›";
-}
-
-.article-category-badge {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    color: white;
-    padding: 8px 20px;
-    border-radius: 30px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.hero-title {
-    color: white;
-    font-size: 2.8rem;
-    font-weight: 800;
-    line-height: 1.3;
-    margin-bottom: 30px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.article-meta-info {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    padding: 20px 30px;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.meta-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: white;
-}
-
-.author-avatar {
-    width: 45px;
-    height: 45px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-}
-
-.meta-content {
-    display: flex;
-    flex-direction: column;
-}
-
-.meta-label {
-    font-size: 0.75rem;
-    opacity: 0.9;
-}
-
-.meta-value {
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.meta-divider {
-    width: 1px;
-    height: 30px;
-    background: rgba(255, 255, 255, 0.3);
-}
-
-/* Blog Content Section */
-.blog-content-section {
-    padding: 80px 0;
-    background: #f8f9fa;
-}
-
-.blog-article-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    margin-bottom: 30px;
-}
-
-.featured-image-wrapper {
-    padding: 30px 30px 0;
-}
-
-.image-frame {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.featured-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.6s ease;
-}
-
-.image-frame:hover .featured-image {
-    transform: scale(1.05);
-}
-
-.image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
-}
-
-.article-body {
-    padding: 40px 50px;
-}
-
-.content-wrapper {
-    color: #333;
-    font-size: 1.1rem;
-    line-height: 1.9;
-    font-weight: 400;
-}
-
-.content-wrapper p {
-    margin-bottom: 1.5rem;
-}
-
-.content-link {
-    color: #a8207a;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(168, 32, 122, 0.3);
-    transition: all 0.3s ease;
-}
-
-.content-link:hover {
-    color: #7ba428;
-    border-bottom-color: #7ba428;
-}
-
-.article-footer {
-    padding: 30px 50px 40px;
-    border-top: 2px solid #f0f0f0;
-}
-
-.article-tags {
-    margin-bottom: 30px;
-}
-
-.tags-label {
-    color: #666;
-    font-weight: 600;
-    margin-right: 15px;
-    font-size: 0.95rem;
-}
-
-.tag-item {
-    display: inline-block;
-    background: linear-gradient(135deg, #a8207a 0%, #7ba428 100%);
-    color: white;
-    padding: 6px 18px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.tag-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(168, 32, 122, 0.3);
-    color: white;
-}
-
-.social-share-section {
-    margin: 35px 0;
-}
-
-.share-title {
-    color: #2d3e50;
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-}
-
-.share-buttons-elegant {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.share-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 24px;
-    border-radius: 30px;
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.share-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    color: white;
-}
-
-.share-btn.facebook {
-    background: linear-gradient(135deg, #3b5998 0%, #4c70ba 100%);
-}
-
-.share-btn.twitter {
-    background: linear-gradient(135deg, #1da1f2 0%, #4ab3f4 100%);
-}
-
-.share-btn.linkedin {
-    background: linear-gradient(135deg, #0077b5 0%, #0e8bc3 100%);
-}
-
-.share-btn.whatsapp {
-    background: linear-gradient(135deg, #25d366 0%, #3ae374 100%);
-}
-
-.btn-back-elegant {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: linear-gradient(135deg, #7ba428 0%, #93c03a 100%);
-    color: white;
-    padding: 14px 32px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 20px rgba(123, 164, 40, 0.3);
-}
-
-.btn-back-elegant:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(123, 164, 40, 0.4);
-    color: white;
-}
-
-/* Elegant Sidebar */
-.blog-sidebar {
-    position: sticky;
-    top: 100px;
-}
-
-.sidebar-widget {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    margin-bottom: 30px;
-    transition: all 0.3s ease;
-}
-
-.sidebar-widget:hover {
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
-    transform: translateY(-5px);
-}
-
-.widget-header {
-    background: linear-gradient(135deg, #a8207a 0%, #7ba428 100%);
-    padding: 25px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.widget-icon {
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: white;
-}
-
-.widget-title {
-    color: white;
-    font-weight: 800;
-    font-size: 1.3rem;
-    margin: 0;
-}
-
-.widget-body {
-    padding: 25px;
-}
-
-.elegant-services-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-}
-
-.service-item {
-    margin-bottom: 8px;
-}
-
-.service-link {
-    display: flex;
-    align-items: center;
-    padding: 14px 18px;
-    background: #f8f9fa;
-    border-radius: 12px;
-    text-decoration: none;
-    color: #333;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.service-link::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: linear-gradient(135deg, #a8207a 0%, #7ba428 100%);
-    transform: scaleY(0);
-    transition: transform 0.3s ease;
-}
-
-.service-link:hover::before {
-    transform: scaleY(1);
-}
-
-.service-link:hover {
-    background: white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transform: translateX(5px);
-    color: #a8207a;
-}
-
-.service-icon {
-    color: #7ba428;
-    margin-right: 12px;
-    font-size: 0.8rem;
-    transition: all 0.3s ease;
-}
-
-.service-link:hover .service-icon {
-    color: #a8207a;
-}
-
-.service-name {
-    flex: 1;
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.service-arrow {
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: all 0.3s ease;
-    color: #a8207a;
-}
-
-.service-link:hover .service-arrow {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.widget-btn {
-    display: block;
-    text-align: center;
-    background: linear-gradient(135deg, #a8207a 0%, #7ba428 100%);
-    color: white;
-    padding: 14px 20px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(168, 32, 122, 0.3);
-}
-
-.widget-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(168, 32, 122, 0.4);
-    color: white;
-}
-
-.elegant-news-list {
-    margin-bottom: 20px;
-}
-
-.news-item {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.news-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.news-link {
-    display: flex;
-    gap: 15px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.news-thumbnail {
-    width: 90px;
-    height: 90px;
-    flex-shrink: 0;
-    border-radius: 12px;
-    overflow: hidden;
-    position: relative;
-}
-
-.news-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.news-link:hover .news-thumbnail img {
-    transform: scale(1.1);
-}
-
-.thumbnail-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(168, 32, 122, 0.7) 0%, rgba(123, 164, 40, 0.7) 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.news-link:hover .thumbnail-overlay {
-    opacity: 1;
-}
-
-.news-content {
-    flex: 1;
-}
-
-.news-title {
-    color: #2d3e50;
-    font-weight: 700;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 8px;
-    transition: color 0.3s ease;
-}
-
-.news-link:hover .news-title {
-    color: #a8207a;
-}
-
-.news-meta {
-    color: #999;
-    font-size: 0.85rem;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-/* Responsive Design */
-@media (max-width: 991px) {
-    .blog-sidebar {
-        position: static;
-        margin-top: 40px;
-    }
-    
-    .hero-title {
-        font-size: 2.2rem;
-    }
-    
-    .article-body {
-        padding: 30px 25px;
-    }
-    
-    .article-footer {
-        padding: 25px;
-    }
-}
-
-@media (max-width: 767px) {
-    .hero-title {
-        font-size: 1.8rem;
-    }
-    
-    .article-meta-info {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-    
-    .meta-divider {
-        display: none;
-    }
-    
-    .share-buttons-elegant {
-        flex-direction: column;
-    }
-    
-    .share-btn {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .featured-image-wrapper {
-        padding: 20px 20px 0;
-    }
-    
-    .article-body {
-        padding: 25px 20px;
-    }
-    
-    .article-footer {
-        padding: 20px;
-    }
-}
-
-/* Call to Action Section */
-.cta-section {
-    position: relative;
-    background: linear-gradient(135deg, rgba(168, 32, 122, 0.95) 0%, rgba(123, 164, 40, 0.95) 100%),
-                url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600') center/cover;
-    padding: 100px 0;
-    margin-top: 0;
-    overflow: hidden;
-}
-
-.cta-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-    z-index: 1;
-}
-
-.cta-section .container {
-    z-index: 2;
-}
-
-.cta-content {
-    animation: fadeInUp 0.8s ease-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.cta-title {
-    color: white;
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-    line-height: 1.2;
-}
-
-.cta-subtitle {
-    color: rgba(255, 255, 255, 0.95);
-    font-size: 1.25rem;
-    margin-bottom: 50px;
-    font-weight: 400;
-}
-
-.cta-contact {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.cta-phone {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    padding: 25px 40px;
-    border-radius: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
-}
-
-.cta-phone:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.cta-phone i {
-    font-size: 2.5rem;
-    color: white;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-}
-
-.phone-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.phone-label {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 5px;
-}
-
-.phone-number {
-    color: white;
-    font-size: 1.8rem;
-    font-weight: 800;
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-
-.phone-number:hover {
-    color: #fff;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-}
-
-.cta-divider {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.cta-divider::before,
-.cta-divider::after {
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.4);
-}
-
-.cta-divider::before {
-    left: -35px;
-}
-
-.cta-divider::after {
-    right: -35px;
-}
-
-.cta-divider span {
-    color: white;
-    font-weight: 700;
-    font-size: 1rem;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.btn-appointment {
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    background: white;
-    color: #a8207a;
-    padding: 20px 45px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.15rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-appointment::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #a8207a 0%, #7ba428 100%);
-    transition: left 0.4s ease;
-    z-index: -1;
-}
-
-.btn-appointment:hover::before {
-    left: 0;
-}
-
-.btn-appointment:hover {
-    color: white;
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-}
-
-.btn-appointment i {
-    font-size: 1.3rem;
-    transition: transform 0.3s ease;
-}
-
-.btn-appointment:hover i {
-    transform: scale(1.2) rotate(10deg);
-}
-
-/* Responsive Design for CTA */
-@media (max-width: 991px) {
-    .cta-title {
-        font-size: 2.5rem;
-    }
-    
-    .cta-contact {
-        gap: 30px;
-    }
-}
-
-@media (max-width: 767px) {
-    .cta-section {
-        padding: 60px 0;
-    }
-    
-    .cta-title {
-        font-size: 2rem;
-    }
-    
-    .cta-subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 35px;
-    }
-    
-    .cta-contact {
-        flex-direction: column;
-        gap: 25px;
-    }
-    
-    .cta-phone {
-        width: 100%;
-        justify-content: center;
-        padding: 20px 30px;
-    }
-    
-    .phone-content {
-        align-items: center;
-    }
-    
-    .phone-number {
-        font-size: 1.5rem;
-    }
-    
-    .cta-divider {
-        transform: rotate(90deg);
-    }
-    
-    .btn-appointment {
-        width: 100%;
-        justify-content: center;
-        padding: 18px 35px;
-        font-size: 1.05rem;
-    }
-}
-</style>
-@endpush
+    </section>
+
+    @include('partials.footer')
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    </script>
+</body>
+</html>

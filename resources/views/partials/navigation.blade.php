@@ -47,7 +47,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="resourcesDropdown">
                             <li><a class="dropdown-item" href="{{ route('news-articles') }}">News & Articles</a></li>
-                            <li><a class="dropdown-item" href="#">FAQs</a></li>
+                            <li><a class="dropdown-item" href="{{ route('faqs') }}">FAQs</a></li>
                       
                         </ul>
                         
@@ -58,7 +58,7 @@
                             Client
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="clientDropdown">
-                            <li><a class="dropdown-item" href="{{ route('shop.index') }}">Businesses & Organizations</a></li>
+                            <li><a class="dropdown-item" href="{{ route('businesses-organizations') }}">Businesses & Organizations</a></li>
                         </ul>
                     </li>
                     <li class="nav-item ms-3">

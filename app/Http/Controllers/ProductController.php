@@ -9,11 +9,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::active()
-            ->ordered()
-            ->paginate(12);
-        
-        return view('shop.index-redesign', compact('products'));
+        return view('businesses-organizations');
     }
 
     public function show($slug)

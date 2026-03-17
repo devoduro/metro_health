@@ -26,15 +26,20 @@
  
     @include('partials.navigation')
     <!-- Page Hero -->
-    <section class="page-hero" style="background: linear-gradient(135deg, #FFF5F0 0%, #FFFFFF 100%); padding: 120px 0 80px;">
+    <section class="page-hero" style="background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(59, 130, 246, 0.85)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920') center/cover; padding: 120px 0 80px; position: relative;">
         <div class="container">
             <div class="row align-items-center justify-content-center text-center">
                 <div class="col-lg-8" data-aos="fade-up">
-</br></br>
-                    <h1 class="display-3 fw-bold mb-4" style="color: var(--ashlocs-dark);">Contact Us</h1>
-                    <p class="lead" style="font-size: 1.5rem; color: var(--ashlocs-gray);">
+                    <h1 class="display-3 fw-bold mb-4" style="color: white; margin-top: 40px;">Contact Us</h1>
+                    <p class="lead" style="font-size: 1.5rem; color: white; opacity: 0.95;">
                         We're here to help. Reach out to book an appointment or ask any questions about our services.
                     </p>
+                    <nav aria-label="breadcrumb" style="margin-top: 20px;">
+                        <ol class="breadcrumb justify-content-center" style="background: transparent;">
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}" style="color: white; text-decoration: none;">Home</a></li>
+                            <li class="breadcrumb-item active" style="color: rgba(255,255,255,0.8);">Contact</li>
+                        </ol>
+                    </nav>
                 </div>
             </div>
         </div>

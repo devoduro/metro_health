@@ -138,6 +138,9 @@ Route::prefix('services')->name('services.')->group(function () {
     Route::get('/{slug}', [ServiceController::class, 'show'])->name('show');
 });
 
+// Businesses & Organizations
+Route::get('/businesses-organizations', [ProductController::class, 'index'])->name('businesses-organizations');
+
 // Shop/Products
 Route::prefix('shop')->name('shop.')->group(function () {
     Route::get('/', [ProductController::class, 'index'])->name('index');
@@ -181,6 +184,11 @@ Route::get('/news-articles', function () {
         ->paginate(9);
     return view('news-articles', compact('posts'));
 })->name('news-articles');
+
+// FAQs Page
+Route::get('/faqs', function () {
+    return view('faqs');
+})->name('faqs');
 
 // Admin Routes
 use App\Http\Controllers\Admin\AdminController;
