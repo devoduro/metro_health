@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    @include('partials.seo', [
+    <?php echo $__env->make('partials.seo', [
         'title' => 'Who We Are - Metro Health Hospital',
         'description' => 'Learn about Metro Health Hospital - our mission, vision, values, and commitment to excellence in healthcare since 2011.',
         'keywords' => 'metro health hospital, who we are, healthcare kumasi, hospital abrepo junction, medical services ghana'
-    ])
+    ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,14 +16,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/ashlocs-custom.css') }}">
+    <link rel="stylesheet" href="<?php echo e(asset('css/ashlocs-custom.css')); ?>">
 </head>
 <body>
     <!-- Top Header Bar -->
-    @include('partials.top_header')
+    <?php echo $__env->make('partials.top_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     
     <!-- Main Navbar -->
-    @include('partials.navigation')
+    <?php echo $__env->make('partials.navigation', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     
     <!-- Page Hero -->
     <section class="about-hero">
@@ -33,7 +33,7 @@
                     </br></br>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="<?php echo e(route('home')); ?>">Home</a></li>
                             <li class="breadcrumb-item active">Who We Are</li>
                         </ol>
                     </nav>
@@ -120,7 +120,7 @@
         </div>
     </section>
 
-    @include('partials.footer')
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -281,3 +281,4 @@
     </style>
 </body>
 </html>
+<?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/metrohealth/resources/views/who-we-are-redesign.blade.php ENDPATH**/ ?>
