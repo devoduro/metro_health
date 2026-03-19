@@ -126,6 +126,9 @@ Route::prefix('services')->name('services.')->group(function () {
     Route::get('/orthopaedic', function () {
         return view('services.orthopaedic');
     })->name('orthopaedic');
+    Route::get('/orthopedics', function () {
+        return view('services.orthopaedic');
+    })->name('orthopedics');
     Route::get('/ent-care', function () {
         return view('services.ent-care');
     })->name('ent-care');
@@ -135,6 +138,18 @@ Route::prefix('services')->name('services.')->group(function () {
     Route::get('/plastic-surgery', function () {
         return view('services.plastic-surgery');
     })->name('plastic-surgery');
+    Route::get('/internal-medicine', function () {
+        return view('services.internal-medicine');
+    })->name('internal-medicine');
+    Route::get('/laboratory', function () {
+        return view('services.laboratory');
+    })->name('laboratory');
+    Route::get('/radiology', function () {
+        return view('services.radiology');
+    })->name('radiology');
+    Route::get('/pharmacy', function () {
+        return view('services.pharmacy');
+    })->name('pharmacy');
     Route::get('/{slug}', [ServiceController::class, 'show'])->name('show');
 });
 
@@ -189,6 +204,14 @@ Route::get('/news-articles', function () {
 Route::get('/faqs', function () {
     return view('faqs');
 })->name('faqs');
+
+// Clinic Appointments
+Route::prefix('clinic-appointments')->name('clinic-appointments.')->group(function () {
+    Route::get('/', [\App\Http\Controllers\ClinicAppointmentController::class, 'index'])->name('index');
+    Route::post('/', [\App\Http\Controllers\ClinicAppointmentController::class, 'store'])->name('store');
+    Route::get('/success', [\App\Http\Controllers\ClinicAppointmentController::class, 'success'])->name('success');
+    Route::get('/schedule', [\App\Http\Controllers\ClinicAppointmentController::class, 'getServiceSchedule'])->name('schedule');
+});
 
 // Admin Routes
 use App\Http\Controllers\Admin\AdminController;

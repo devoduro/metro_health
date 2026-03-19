@@ -62,7 +62,7 @@
                         </ul>
                     </li>
                     <li class="nav-item ms-3">
-                        <a class="btn btn-book-appointment" href="{{ route('booking.index') }}">
+                        <a class="btn btn-book-appointment" href="{{ route('clinic-appointments.index') }}">
                             <i class="fas fa-calendar-check me-2"></i>BOOK APPOINTMENT
                         </a>
                     </li>

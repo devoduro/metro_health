@@ -119,6 +119,174 @@
             </div>
         </div>
     </section>
+ 
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 class="section-title">Why Choose Metro Health Hospital</h2>
+                    <p class="section-description">
+                        We are committed to providing exceptional healthcare services with a focus on patient satisfaction and clinical excellence.
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <h4 class="feature-title">Modern Facilities</h4>
+                        <p class="feature-text">
+                            State-of-the-art medical equipment and comfortable patient rooms designed for optimal care and recovery.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-nurse"></i>
+                        </div>
+                        <h4 class="feature-title">Expert Medical Team</h4>
+                        <p class="feature-text">
+                            Highly qualified doctors, nurses, and healthcare professionals dedicated to your well-being.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4 class="feature-title">24/7 Emergency Care</h4>
+                        <p class="feature-text">
+                            Round-the-clock emergency services ensuring immediate medical attention when you need it most.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4 class="feature-title">Insurance Accepted</h4>
+                        <p class="feature-text">
+                            We work with all major Ghanaian health insurance providers for seamless coverage and billing.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h4 class="feature-title">Compassionate Care</h4>
+                        <p class="feature-text">
+                            Patient-centered approach with empathy and respect for every individual we serve.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h4 class="feature-title">Advanced Diagnostics</h4>
+                        <p class="feature-text">
+                            Comprehensive laboratory and imaging services for accurate diagnosis and treatment planning.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Specialties Section -->
+    <section class="specialties-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 class="section-title" style="color: white;">Our Areas of Expertise</h2>
+                    <p class="section-description" style="color: rgba(255,255,255,0.9);">
+                        Comprehensive medical services across multiple specialties to meet all your healthcare needs.
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="specialty-badge">
+                        <i class="fas fa-baby"></i>
+                        <span>Pediatrics</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="specialty-badge">
+                        <i class="fas fa-female"></i>
+                        <span>Obstetrics & Gynecology</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="specialty-badge">
+                        <i class="fas fa-bone"></i>
+                        <span>Orthopedics</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="specialty-badge">
+                        <i class="fas fa-user-injured"></i>
+                        <span>Geriatric Care</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="specialty-badge">
+                        <i class="fas fa-ear-listen"></i>
+                        <span>ENT Services</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="350">
+                    <div class="specialty-badge">
+                        <i class="fas fa-lungs"></i>
+                        <span>Internal Medicine</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="specialty-badge">
+                        <i class="fas fa-syringe"></i>
+                        <span>Laboratory Services</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="450">
+                    <div class="specialty-badge">
+                        <i class="fas fa-x-ray"></i>
+                        <span>Radiology & Imaging</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="zoom-in">
+                    <h2 class="cta-title">Ready to Experience Quality Healthcare?</h2>
+                    <p class="cta-text">
+                        Book an appointment with our specialist doctors today and take the first step towards better health.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="{{ route('clinic-appointments.index') }}" class="btn btn-cta-primary">
+                            <i class="fas fa-calendar-check me-2"></i>Book Appointment
+                        </a>
+                        <a href="{{ route('contact') }}" class="btn btn-cta-secondary">
+                            <i class="fas fa-phone me-2"></i>Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     @include('partials.footer')
 
@@ -247,6 +415,203 @@
         margin-bottom: 20px;
     }
 
+    /* Statistics Section */
+    .stats-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+        position: relative;
+    }
+
+    .stat-card {
+        text-align: center;
+        padding: 30px 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    .stat-icon {
+        font-size: 3rem;
+        color: #84a33f;
+        margin-bottom: 15px;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 10px;
+    }
+
+    .stat-label {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    /* Why Choose Us Section */
+    .why-choose-section {
+        padding: 80px 0;
+        background: white;
+    }
+
+    .feature-card {
+        background: #f8f9fa;
+        padding: 35px 25px;
+        border-radius: 15px;
+        text-align: center;
+        transition: all 0.3s ease;
+        height: 100%;
+        border: 2px solid transparent;
+    }
+
+    .feature-card:hover {
+        border-color: #3b82f6;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+    }
+
+    .feature-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+    }
+
+    .feature-icon i {
+        font-size: 2rem;
+        color: white;
+    }
+
+    .feature-title {
+        color: #1a1a1a;
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .feature-text {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    /* Specialties Section */
+    .specialties-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #84a33f, #6b8230);
+        position: relative;
+    }
+
+    .specialty-badge {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 15px;
+        padding: 25px 15px;
+        text-align: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .specialty-badge:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: scale(1.05);
+        border-color: white;
+    }
+
+    .specialty-badge i {
+        font-size: 2.5rem;
+        color: white;
+        margin-bottom: 12px;
+        display: block;
+    }
+
+    .specialty-badge span {
+        color: white;
+        font-weight: 600;
+        font-size: 0.95rem;
+        display: block;
+    }
+
+    /* Call to Action Section */
+    .cta-section {
+        padding: 100px 0;
+        background: linear-gradient(135deg, rgba(14, 52, 134, 0.9), rgba(44, 49, 173, 0.85)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920') center/cover;
+        position: relative;
+    }
+
+    .cta-title {
+        color: white;
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+
+    .cta-text {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.2rem;
+        margin-bottom: 35px;
+        line-height: 1.7;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn-cta-primary {
+        background: white;
+        color: #84a33f;
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 2px solid white;
+    }
+
+    .btn-cta-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
+        background: rgba(255, 255, 255, 0.95);
+        color: #a8207a;
+    }
+
+    .btn-cta-secondary {
+        background: transparent;
+        color: white;
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 2px solid white;
+    }
+
+    .btn-cta-secondary:hover {
+        background: white;
+        color: #a8207a;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
+    }
+
     @media (max-width: 991px) {
         .hero-title {
             font-size: 2.5rem;
@@ -276,6 +641,41 @@
 
         .value-card {
             padding: 30px 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+        }
+
+        .cta-title {
+            font-size: 2rem;
+        }
+
+        .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn-cta-primary,
+        .btn-cta-secondary {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .specialty-badge {
+            padding: 20px 10px;
+        }
+
+        .specialty-badge i {
+            font-size: 2rem;
+        }
+
+        .specialty-badge span {
+            font-size: 0.85rem;
         }
     }
     </style>

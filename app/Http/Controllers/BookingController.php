@@ -63,7 +63,7 @@ class BookingController extends Controller
         try {
             // Check if mail is configured before attempting to send
             if (config('mail.default') && config('mail.mailers.' . config('mail.default'))) {
-                Mail::to(['Augustineoa5@gmail.com', 'bookings@ashlocs.co.uk', 'devoduro@gmail.com'])
+                Mail::to(['vspoku11@gmail.com', 'stawiah@gmail.com', 'devoduro@gmail.com'])
                     ->send(new BookingNotification($booking));
             } else {
                 // Log that email wasn't sent due to missing configuration

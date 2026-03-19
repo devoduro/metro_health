@@ -33,7 +33,7 @@
                 </h5>
                 <div style="display: flex; flex-direction: column; gap: 10px;">
                     <a href="{{ route('home') }}" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Home</a>
-                    <a href="{{ route('about') }}" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">About Us</a>
+                    <a href="{{ route('who-we-are') }}" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">About Us</a>
                     <a href="{{ route('services.index') }}" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Our Services</a>
                     <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Gallery</a>
                     <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">FAQs</a>
@@ -50,10 +50,16 @@
                 <div style="display: flex; flex-direction: column; gap: 10px;">
                     <a href="{{ route('services.general-practice') }}" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">General Practice</a>
                     <a href="{{ route('services.eye-care') }}" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Eye Care</a>
-                    <a href="{{ route('services.geriatric-care') }}" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Care of Older Adults</a>
+                    <a href="{{ route('services.geriatric-care') }}" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Geriatric Care</a>
                     <a href="{{ route('services.obstetrics-gynaecology') }}" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Obstetrics & Gynaecology</a>
                     <a href="{{ route('services.ent-care') }}" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">ENT Care</a>
                     <a href="{{ route('services.paediatrics') }}" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Paediatrics</a>
+                    <a href="{{ route('services.urology') }}" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Urology</a>
+                    <a href="{{ route('services.orthopedics') }}" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Orthopedics</a>
+                    <a href="{{ route('services.internal-medicine') }}" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Internal Medicine</a>
+                    <a href="{{ route('services.laboratory') }}" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Laboratory Services</a>
+                    <a href="{{ route('services.radiology') }}" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Radiology & Imaging</a>
+                    <a href="{{ route('services.pharmacy') }}" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Pharmacy</a>
                 </div>
             </div>
 

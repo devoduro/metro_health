@@ -143,7 +143,7 @@ class StripePaymentController extends Controller
                     
                     if (config('mail.default') && config('mail.mailers.' . config('mail.default'))) {
                         // Send to admin
-                        \Mail::to(['Augustineoa5@gmail.com', 'bookings@ashlocs.co.uk', 'devoduro@gmail.com'])
+                        \Mail::to(['vspoku11@gmail.com', 'stawiah@gmail.com', 'devoduro@gmail.com'])
                             ->send(new \App\Mail\BookingNotification($booking));
                         
                         \Log::info('Admin booking notification email sent successfully', ['booking_id' => $booking->id]);
