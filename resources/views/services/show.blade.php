@@ -49,7 +49,7 @@
                         @endif
 
                         <div class="d-flex gap-3">
-                            <a href="{{ route('booking.index') }}?service={{ $service->id }}" class="btn btn-primary-custom">
+                            <a href="{{ route('clinic-appointments.index') }}" class="btn btn-primary-custom">
                                 <i class="fas fa-calendar-check me-2"></i>Book Appointment
                             </a>
                             <a href="{{ route('contact') }}" class="btn btn-outline-primary">

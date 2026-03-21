@@ -216,20 +216,20 @@
             <div class="row g-4">
                 <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
                     <div class="specialty-badge">
-                        <i class="fas fa-baby"></i>
-                        <span>Pediatrics</span>
+                        <i class="fas fa-stethoscope"></i>
+                        <span>General Practice</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="150">
                     <div class="specialty-badge">
-                        <i class="fas fa-female"></i>
-                        <span>Obstetrics & Gynecology</span>
+                        <i class="fas fa-user-md"></i>
+                        <span>General Surgery</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
                     <div class="specialty-badge">
-                        <i class="fas fa-bone"></i>
-                        <span>Orthopedics</span>
+                        <i class="fas fa-female"></i>
+                        <span>Obstetrics & Gynaecology</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="250">
@@ -240,26 +240,44 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="300">
                     <div class="specialty-badge">
-                        <i class="fas fa-ear-listen"></i>
-                        <span>ENT Services</span>
+                        <i class="fas fa-brain"></i>
+                        <span>Neurology & Neurosurgery</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="350">
                     <div class="specialty-badge">
-                        <i class="fas fa-lungs"></i>
-                        <span>Internal Medicine</span>
+                        <i class="fas fa-baby"></i>
+                        <span>Paediatrics</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
                     <div class="specialty-badge">
-                        <i class="fas fa-syringe"></i>
-                        <span>Laboratory Services</span>
+                        <i class="fas fa-procedures"></i>
+                        <span>Urology</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="450">
                     <div class="specialty-badge">
-                        <i class="fas fa-x-ray"></i>
-                        <span>Radiology & Imaging</span>
+                        <i class="fas fa-bone"></i>
+                        <span>Orthopaedic</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="specialty-badge">
+                        <i class="fas fa-ear-listen"></i>
+                        <span>ENT Care</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="550">
+                    <div class="specialty-badge">
+                        <i class="fas fa-eye"></i>
+                        <span>Eye Care</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="specialty-badge">
+                        <i class="fas fa-hand-sparkles"></i>
+                        <span>Plastic Surgery</span>
                     </div>
                 </div>
             </div>

@@ -155,9 +155,10 @@
 
     <style>
     .team-hero {
-        background: linear-gradient(135deg, #a8207a 0%, #7ba428 100%);
+        background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(21, 78, 171, 0.85)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920') center/cover;
         padding: 120px 0 80px;
         margin-top: 44px;
+        position: relative;
     }
 
     .team-hero .breadcrumb {

@@ -217,7 +217,7 @@
                 <div class="col-lg-8 text-center" data-aos="fade-up">
                     <h2>Ready to Book Your Appointment?</h2>
                     <p>Experience quality healthcare with compassion and excellence. Book your appointment today!</p>
-                    <a href="{{ route('booking.index') }}" class="btn btn-white-custom btn-lg">
+                    <a href="{{ route('clinic-appointments.index') }}" class="btn btn-white-custom btn-lg">
                         <i class="fas fa-calendar-check me-2"></i>Book an Appointment
                     </a>
                 </div>

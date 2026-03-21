@@ -48,7 +48,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ route('shop.index') }}">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact Us</a></li>
                     <li class="nav-item">
-                        <a class="btn btn-primary-custom btn-sm" href="{{ route('booking.index') }}">Book Appointment</a>
+                        <a class="btn btn-primary-custom btn-sm" href="{{ route('clinic-appointments.index') }}">Book Appointment</a>
                     </li>
                     <li class="nav-item ms-lg-3">
                         <button class="theme-switch" id="theme-toggle" aria-label="Toggle Dark Mode">

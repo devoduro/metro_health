@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    @include('partials.seo', [
+    <?php echo $__env->make('partials.seo', [
         'title' => 'Professional Hair Care & Dreadlock Specialists',
         'description' => 'Expert dreadlocks, braiding, haircuts & training services for textured hair. UK-wide mobile service. Book your appointment with Ashlocs today.',
         'keywords' => 'dreadlocks UK, locs specialist, braiding services, textured hair care, mobile hair salon, sisterlocks, box braids, cornrows, natural hair UK'
-    ])
+    ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     
-    @include('partials.structured-data')
+    <?php echo $__env->make('partials.structured-data', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,14 +18,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/ashlocs-custom.css') }}">
+    <link rel="stylesheet" href="<?php echo e(asset('css/ashlocs-custom.css')); ?>">
 </head>
 <body>
     <!-- Top Header Bar -->
-    @include('partials.top_header')
+    <?php echo $__env->make('partials.top_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <!-- Main Navbar -->
  
-    @include('partials.navigation')
+    <?php echo $__env->make('partials.navigation', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <!-- Hero Slider Section -->
     <section class="hero-slider">
         <!-- Slide 1 -->
@@ -52,7 +52,7 @@
                     <h1>Expert Care Across <span class="highlight" style="color: #d946a6;">All Specialties</span></h1>
                     <p>From geriatrics to neurosurgery, our team of highly skilled professionals provides comprehensive care tailored to your needs.</p>
                     <div class="hero-slide-buttons">
-                        <a href="{{ route('services.index') }}" class="btn btn-primary-custom btn-lg">
+                        <a href="<?php echo e(route('services.index')); ?>" class="btn btn-primary-custom btn-lg">
                             Our Services
                         </a>
                     </div>
@@ -99,7 +99,7 @@
                 <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
                     <div class="welcome-image-wrapper">
           
-                        <img src="{{ asset('images/about/welcome1.png') }}" alt="Metro Health Hospital Reception" class="welcome-main-image">
+                        <img src="<?php echo e(asset('images/about/welcome1.png')); ?>" alt="Metro Health Hospital Reception" class="welcome-main-image">
                      
                     </div>
                 </div>
@@ -131,7 +131,7 @@
                                 </li>
                             </ul>
                             <div class="team-image-small">
-                                <img src="{{ asset('images/gallery/resized/IMG_6937.jpg') }}" alt="Medical Team">
+                                <img src="<?php echo e(asset('images/gallery/resized/IMG_6937.jpg')); ?>" alt="Medical Team">
                             </div>
                         </div>
                     </div>
@@ -220,12 +220,12 @@
                     <div class="medical-service-card">
                         <div class="service-number-badge">01</div>
                         <div class="service-card-image">
-                            <img src="{{ asset('images/gallery/resized/IMG_6845.jpg') }}" alt="General Practice">
+                            <img src="<?php echo e(asset('images/gallery/resized/IMG_6845.jpg')); ?>" alt="General Practice">
                         </div>
                         <div class="service-card-body">
                             <h3 class="service-card-title">General Practice</h3>
                             <p class="service-card-text">Comprehensive primary healthcare services for individuals and families of all ages.</p>
-                            <a href="{{ route('services.index') }}" class="service-explore-link">
+                            <a href="<?php echo e(route('services.index')); ?>" class="service-explore-link">
                                 Explore Service <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -237,12 +237,12 @@
                     <div class="medical-service-card">
                         <div class="service-number-badge">02</div>
                         <div class="service-card-image">
-                            <img src="{{ asset('images/services/surgery.jpg') }}" alt="General Surgery">
+                            <img src="<?php echo e(asset('images/services/surgery.jpg')); ?>" alt="General Surgery">
                         </div>
                         <div class="service-card-body">
                             <h3 class="service-card-title">General Surgery Department</h3>
                             <p class="service-card-text">Expert surgical care for a wide range of conditions requiring operative treatment.</p>
-                            <a href="{{ route('services.index') }}" class="service-explore-link">
+                            <a href="<?php echo e(route('services.index')); ?>" class="service-explore-link">
                                 Explore Service <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -254,12 +254,12 @@
                     <div class="medical-service-card">
                         <div class="service-number-badge">03</div>
                         <div class="service-card-image">
-                            <img src="{{ asset('images/services/maternity.jpg') }}" alt="Obstetrics & Gynaecology">
+                            <img src="<?php echo e(asset('images/services/maternity.jpg')); ?>" alt="Obstetrics & Gynaecology">
                         </div>
                         <div class="service-card-body">
                             <h3 class="service-card-title">Obstetrics & Gynaecology</h3>
                             <p class="service-card-text">Comprehensive women's health services including maternity and gynecological care.</p>
-                            <a href="{{ route('services.index') }}" class="service-explore-link">
+                            <a href="<?php echo e(route('services.index')); ?>" class="service-explore-link">
                                 Explore Service <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -271,12 +271,12 @@
                     <div class="medical-service-card">
                         <div class="service-number-badge">04</div>
                         <div class="service-card-image">
-                            <img src="{{ asset('images/services/prmi-1-1.png') }}" alt="Geriatric Care">
+                            <img src="<?php echo e(asset('images/services/prmi-1-1.png')); ?>" alt="Geriatric Care">
                         </div>
                         <div class="service-card-body">
                             <h3 class="service-card-title">Geriatric Care</h3>
                             <p class="service-card-text">Specialized healthcare services tailored for the elderly with compassion and expertise.</p>
-                            <a href="{{ route('services.index') }}" class="service-explore-link">
+                            <a href="<?php echo e(route('services.index')); ?>" class="service-explore-link">
                                 Explore Service <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -288,12 +288,12 @@
                     <div class="medical-service-card">
                         <div class="service-number-badge">05</div>
                         <div class="service-card-image">
-                            <img src="{{ asset('images/services/neurology-neurosurgery.jpg') }}" alt="Neurology & Neurosurgery">
+                            <img src="<?php echo e(asset('images/services/neurology-neurosurgery.jpg')); ?>" alt="Neurology & Neurosurgery">
                         </div>
                         <div class="service-card-body">
                             <h3 class="service-card-title">Neurology & Neurosurgery</h3>
                             <p class="service-card-text">Advanced neurological care and surgical interventions for brain and nervous system conditions.</p>
-                            <a href="{{ route('services.index') }}" class="service-explore-link">
+                            <a href="<?php echo e(route('services.index')); ?>" class="service-explore-link">
                                 Explore Service <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -305,12 +305,12 @@
                     <div class="medical-service-card">
                         <div class="service-number-badge">06</div>
                         <div class="service-card-image">
-                            <img src="{{ asset('images/services/1.webp') }}" alt="Paediatrics">
+                            <img src="<?php echo e(asset('images/services/1.webp')); ?>" alt="Paediatrics">
                         </div>
                         <div class="service-card-body">
                             <h3 class="service-card-title">Paediatrics</h3>
                             <p class="service-card-text">Comprehensive healthcare for infants, children, and adolescents with expert pediatric care.</p>
-                            <a href="{{ route('services.index') }}" class="service-explore-link">
+                            <a href="<?php echo e(route('services.index')); ?>" class="service-explore-link">
                                 Explore Service <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -320,7 +320,7 @@
 
             <!-- View All Services Button -->
             <div class="text-center" data-aos="fade-up">
-                <a href="{{ route('services.index') }}" class="btn-view-all-services">
+                <a href="<?php echo e(route('services.index')); ?>" class="btn-view-all-services">
                     View All Services <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
@@ -340,50 +340,52 @@
             </div>
 
             <!-- Articles Grid -->
-            @if(isset($blogPosts) && $blogPosts->count() > 0)
+            <?php if(isset($blogPosts) && $blogPosts->count() > 0): ?>
             <div class="row g-4 mb-5">
-                @foreach($blogPosts as $index => $post)
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ ($index % 3) * 100 }}">
+                <?php $__currentLoopData = $blogPosts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="<?php echo e(($index % 3) * 100); ?>">
                     <article class="news-article-card">
                         <div class="article-image">
-                            @if($post->image)
-                                <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}">
-                            @else
-                                <img src="{{ asset('images/blog/default.jpg') }}" alt="{{ $post->title }}">
-                            @endif
-                            <div class="article-category-badge">{{ $post->category ?? 'Health News' }}</div>
+                            <?php if($post->image): ?>
+                                <img src="<?php echo e(asset('storage/' . $post->image)); ?>" alt="<?php echo e($post->title); ?>">
+                            <?php else: ?>
+                                <img src="<?php echo e(asset('images/blog/default.jpg')); ?>" alt="<?php echo e($post->title); ?>">
+                            <?php endif; ?>
+                            <div class="article-category-badge"><?php echo e($post->category ?? 'Health News'); ?></div>
                         </div>
                         <div class="article-content">
                             <div class="article-meta">
                                 <span class="article-date">
-                                    <i class="far fa-calendar"></i> {{ $post->published_at ? $post->published_at->format('M d, Y') : 'Recent' }}
+                                    <i class="far fa-calendar"></i> <?php echo e($post->published_at ? $post->published_at->format('M d, Y') : 'Recent'); ?>
+
                                 </span>
                                 <span class="article-author">
-                                    <i class="far fa-user"></i> {{ $post->author }}
+                                    <i class="far fa-user"></i> <?php echo e($post->author); ?>
+
                                 </span>
                             </div>
-                            <h3 class="article-title">{{ $post->title }}</h3>
-                            <p class="article-excerpt">{{ Str::limit($post->excerpt, 120) }}</p>
-                            <a href="{{ route('news-update.show', $post->slug) }}" class="article-read-more">
+                            <h3 class="article-title"><?php echo e($post->title); ?></h3>
+                            <p class="article-excerpt"><?php echo e(Str::limit($post->excerpt, 120)); ?></p>
+                            <a href="<?php echo e(route('news-update.show', $post->slug)); ?>" class="article-read-more">
                                 Read More <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </article>
                 </div>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
 
             <!-- View All Articles Button -->
             <div class="text-center" data-aos="fade-up">
-                <a href="{{ route('news-articles') }}" class="btn-view-all-articles">
+                <a href="<?php echo e(route('news-articles')); ?>" class="btn-view-all-articles">
                     View All Articles <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
-            @else
+            <?php else: ?>
             <div class="text-center py-5">
                 <p class="text-muted">No articles available at the moment. Check back soon!</p>
             </div>
-            @endif
+            <?php endif; ?>
         </div>
     </section>
 
@@ -398,14 +400,14 @@
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <div class="cta-image-card" data-aos="fade-up" data-aos-delay="100" onclick="openCtaLightbox(0)" style="cursor: pointer;">
-                                    <img src="{{ asset('images/gallery/services.jpeg') }}" alt="Elder Care at Metro Health" class="cta-image">
+                                    <img src="<?php echo e(asset('images/gallery/services.jpeg')); ?>" alt="Elder Care at Metro Health" class="cta-image">
                                     <div class="cta-image-overlay">
                                        
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <a href="{{ route('faqs') }}" class="cta-button-card" data-aos="fade-up" data-aos-delay="200">
+                                <a href="<?php echo e(route('faqs')); ?>" class="cta-button-card" data-aos="fade-up" data-aos-delay="200">
                                     <div class="cta-button-content">
                                         <div class="cta-button-icon">
                                             <i class="fas fa-question-circle"></i>
@@ -718,7 +720,7 @@
         // CTA Lightbox functionality
         const ctaImages = [
             {
-                image: '{{ asset('images/gallery/eldercare.jpeg') }}',
+                image: '<?php echo e(asset('images/gallery/eldercare.jpeg')); ?>',
                 title: 'Elder Care at Metro Health'
             }
             
@@ -777,7 +779,7 @@
                 <!-- Left Column: Elder Care Image -->
                 <div class="col-lg-4" data-aos="fade-right">
                     <div class="partners-image-card">
-                        <img src="{{ asset('images/gallery/eldercare.jpeg') }}" alt="Elder Care at Metro Health" class="partners-feature-image">
+                        <img src="<?php echo e(asset('images/gallery/eldercare.jpeg')); ?>" alt="Elder Care at Metro Health" class="partners-feature-image">
                     </div>
                 </div>
 
@@ -785,34 +787,34 @@
                 <div class="col-lg-8" data-aos="fade-left">
                     <div class="partners-grid">
                         <div class="partner-card">
-                            <img src="{{ asset('images/brands/apex-logo2.png') }}" alt="APEX Insurance" class="partner-logo">
+                            <img src="<?php echo e(asset('images/brands/apex-logo2.png')); ?>" alt="APEX Insurance" class="partner-logo">
                         </div>
                         <div class="partner-card">
-                            <img src="{{ asset('images/brands/acacia-logo.png') }}" alt="Acacia Insurance" class="partner-logo">
+                            <img src="<?php echo e(asset('images/brands/acacia-logo.png')); ?>" alt="Acacia Insurance" class="partner-logo">
                         </div>
                         <div class="partner-card">
-                            <img src="{{ asset('images/brands/ace-medical-insurance.png') }}" alt="ACE Medical Insurance" class="partner-logo">
+                            <img src="<?php echo e(asset('images/brands/ace-medical-insurance.png')); ?>" alt="ACE Medical Insurance" class="partner-logo">
                         </div>
                         <div class="partner-card">
-                            <img src="{{ asset('images/brands/ghic.png') }}" alt="GHIC" class="partner-logo">
+                            <img src="<?php echo e(asset('images/brands/ghic.png')); ?>" alt="GHIC" class="partner-logo">
                         </div>
                         <div class="partner-card">
-                            <img src="{{ asset('images/brands/cosmopolitan-logo.png') }}" alt="Cosmopolitan Insurance" class="partner-logo">
+                            <img src="<?php echo e(asset('images/brands/cosmopolitan-logo.png')); ?>" alt="Cosmopolitan Insurance" class="partner-logo">
                         </div>
                         <div class="partner-card">
-                            <img src="{{ asset('images/brands/metropolitan.png') }}" alt="Metropolitan Insurance" class="partner-logo">
+                            <img src="<?php echo e(asset('images/brands/metropolitan.png')); ?>" alt="Metropolitan Insurance" class="partner-logo">
                         </div>
                         <div class="partner-card">
-                            <img src="{{ asset('images/brands/premier-logo1.png') }}" alt="Premier Insurance" class="partner-logo">
+                            <img src="<?php echo e(asset('images/brands/premier-logo1.png')); ?>" alt="Premier Insurance" class="partner-logo">
                         </div>
                         <div class="partner-card">
-                            <img src="{{ asset('images/brands/equity.png') }}" alt="Equity Health Insurance" class="partner-logo">
+                            <img src="<?php echo e(asset('images/brands/equity.png')); ?>" alt="Equity Health Insurance" class="partner-logo">
                         </div>
                         <div class="partner-card">
-                            <img src="{{ asset('images/brands/bim-logo.png') }}" alt="BIMA Insurance" class="partner-logo">
+                            <img src="<?php echo e(asset('images/brands/bim-logo.png')); ?>" alt="BIMA Insurance" class="partner-logo">
                         </div>
                         <div class="partner-card">
-                            <img src="{{ asset('images/brands/nmi-logo-green.webp') }}" alt="NMI Insurance" class="partner-logo">
+                            <img src="<?php echo e(asset('images/brands/nmi-logo-green.webp')); ?>" alt="NMI Insurance" class="partner-logo">
                         </div>
                     </div>
                 </div>
@@ -973,7 +975,7 @@
             </div>
 
             <div class="row g-4">
-                @php
+                <?php
                     $testimonials = [
                         [
                             'name' => 'Sarah Frimpong',
@@ -997,27 +999,27 @@
                             'image' => 'GM'
                         ]
                     ];
-                @endphp
+                ?>
 
-                @foreach($testimonials as $index => $testimonial)
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ ($index + 1) * 100 }}">
+                <?php $__currentLoopData = $testimonials; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $testimonial): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="<?php echo e(($index + 1) * 100); ?>">
                     <div class="testimonial-card">
                         <div class="testimonial-rating">
-                            @for($i = 0; $i < $testimonial['rating']; $i++)
+                            <?php for($i = 0; $i < $testimonial['rating']; $i++): ?>
                             <i class="fas fa-star"></i>
-                            @endfor
+                            <?php endfor; ?>
                         </div>
-                        <p class="testimonial-text">"{{ $testimonial['text'] }}"</p>
+                        <p class="testimonial-text">"<?php echo e($testimonial['text']); ?>"</p>
                         <div class="testimonial-author">
-                            <div class="author-avatar">{{ $testimonial['image'] }}</div>
+                            <div class="author-avatar"><?php echo e($testimonial['image']); ?></div>
                             <div class="author-info">
-                                <h5 class="author-name">{{ $testimonial['name'] }}</h5>
-                                <p class="author-role">{{ $testimonial['role'] }}</p>
+                                <h5 class="author-name"><?php echo e($testimonial['name']); ?></h5>
+                                <p class="author-role"><?php echo e($testimonial['role']); ?></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
         </div>
     </section>
@@ -1033,7 +1035,7 @@
                     </div>
                     <div class="row g-4 justify-content-center">
                         <div class="col-lg-5 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                            <a href="{{ route('clinic-appointments.index') }}" class="cta-card">
+                            <a href="<?php echo e(route('clinic-appointments.index')); ?>" class="cta-card">
                                 <div class="cta-card-icon">
                                     <i class="fas fa-calendar-check"></i>
                                 </div>
@@ -1045,7 +1047,7 @@
                             </a>
                         </div>
                         <div class="col-lg-5 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                            <a href="{{ route('contact') }}" class="cta-card">
+                            <a href="<?php echo e(route('contact')); ?>" class="cta-card">
                                 <div class="cta-card-icon">
                                     <i class="fas fa-phone-alt"></i>
                                 </div>
@@ -1208,7 +1210,7 @@
 
     <!-- Footer -->
    
-    @include('partials.footer')
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -1314,33 +1316,62 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" style="padding: 2rem;">
-                    @if(session('success'))
+                    <?php if(session('success')): ?>
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <i class="fas fa-check-circle me-2"></i>{{ session('success') }}
+                            <i class="fas fa-check-circle me-2"></i><?php echo e(session('success')); ?>
+
                             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                         </div>
-                    @endif
+                    <?php endif; ?>
 
-                    <form action="{{ route('reviews.store') }}" method="POST">
-                        @csrf
+                    <form action="<?php echo e(route('reviews.store')); ?>" method="POST">
+                        <?php echo csrf_field(); ?>
                         <div class="mb-3">
                             <label class="form-label" style="font-weight: 600;">Your Name <span class="text-danger">*</span></label>
-                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" 
-                                   value="{{ old('name') }}" required 
+                            <input type="text" name="name" class="form-control <?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" 
+                                   value="<?php echo e(old('name')); ?>" required 
                                    style="border-radius: 10px; padding: 12px;">
-                            @error('name')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
+                            <?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <div class="invalid-feedback"><?php echo e($message); ?></div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label" style="font-weight: 600;">Email (Optional)</label>
-                            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" 
-                                   value="{{ old('email') }}" 
+                            <input type="email" name="email" class="form-control <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" 
+                                   value="<?php echo e(old('email')); ?>" 
                                    style="border-radius: 10px; padding: 12px;">
-                            @error('email')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
+                            <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <div class="invalid-feedback"><?php echo e($message); ?></div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="mb-3">
@@ -1357,18 +1388,39 @@
                                 <input type="radio" name="rating" value="1" id="star1">
                                 <label for="star1"><i class="fas fa-star"></i></label>
                             </div>
-                            @error('rating')
-                                <div class="text-danger small">{{ $message }}</div>
-                            @enderror
+                            <?php $__errorArgs = ['rating'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <div class="text-danger small"><?php echo e($message); ?></div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="mb-4">
                             <label class="form-label" style="font-weight: 600;">Your Review <span class="text-danger">*</span></label>
-                            <textarea name="review" rows="4" class="form-control @error('review') is-invalid @enderror" 
-                                      required style="border-radius: 10px; padding: 12px;">{{ old('review') }}</textarea>
-                            @error('review')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
+                            <textarea name="review" rows="4" class="form-control <?php $__errorArgs = ['review'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" 
+                                      required style="border-radius: 10px; padding: 12px;"><?php echo e(old('review')); ?></textarea>
+                            <?php $__errorArgs = ['review'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <div class="invalid-feedback"><?php echo e($message); ?></div>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <button type="submit" class="btn btn-primary-custom w-100" style="padding: 12px;">
@@ -2362,3 +2414,4 @@
     </script>
 </body>
 </html>
+<?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/metrohealth/resources/views/home-redesign.blade.php ENDPATH**/ ?>

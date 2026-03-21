@@ -13,20 +13,65 @@
     <link rel="stylesheet" href="{{ asset('css/it-styles.css') }}">
 </head>
 <body>
+    <!-- Top Header Bar -->
+    @include('partials.top_header')
+    
+    <!-- Main Navbar -->
     @include('partials.navigation')
 
-    <!-- Page Header -->
-    <section class="hero-section" style="min-height: 40vh;">
-        <div class="hero-bg"></div>
+    <!-- Page Hero -->
+    <section class="page-hero">
         <div class="container">
-            <div class="row align-items-center justify-content-center text-center" style="min-height: 40vh;">
+            <div class="row justify-content-center text-center">
                 <div class="col-lg-8" data-aos="fade-up">
-                    <h1 class="display-4 mb-4">Book Your Appointment</h1>
-                    <p class="lead">Schedule your hair care session with our expert stylists</p>
+                    <nav aria-label="breadcrumb" style="margin-bottom: 20px;">
+                        <ol class="breadcrumb justify-content-center" style="background: transparent;">
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}" style="color: rgba(255,255,255,0.8); text-decoration: none;">Home</a></li>
+                            <li class="breadcrumb-item active" style="color: white;">Book Appointment</li>
+                        </ol>
+                    </nav>
+                    <h1 class="hero-title">Book Your Appointment</h1>
+                    <p class="hero-subtitle">Schedule your appointment with our expert medical professionals</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(59, 130, 246, 0.85)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920') center/cover;
+            padding: 120px 0 80px;
+            margin-top: 44px;
+            position: relative;
+        }
+
+        .hero-title {
+            color: white;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .hero-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        @media (max-width: 767px) {
+            .page-hero {
+                padding: 100px 0 60px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
 
     <!-- Booking Form -->
     <section class="section-padding">

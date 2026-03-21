@@ -26,18 +26,18 @@
     @include('partials.navigation')
     
     <!-- Page Hero -->
-    <section class="page-hero" style="background: linear-gradient(135deg, rgb(72, 144, 75), rgba(132, 163, 63, 0.95)), url('https://images.unsplash.com/photo-1504439468489-c8920d796a29?w=1920') center/cover; padding: 100px 0 80px; position: relative;">
+    <section class="page-hero" style="background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(63, 109, 182, 0.85)), url('https://images.unsplash.com/photo-1504439468489-c8920d796a29?w=1920') center/cover; padding: 120px 0 80px; margin-top: 44px; position: relative;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center text-white" data-aos="fade-up">
-                    <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 20px;">News & Articles</h1>
-                    <p style="font-size: 1.2rem; opacity: 0.95;">Stay informed with the latest health news, medical insights, and hospital updates</p>
-                    <nav aria-label="breadcrumb" style="margin-top: 20px;">
+                    <nav aria-label="breadcrumb" style="margin-bottom: 20px;">
                         <ol class="breadcrumb justify-content-center" style="background: transparent;">
-                            <li class="breadcrumb-item"><a href="{{ route('home') }}" style="color: white; text-decoration: none;">Home</a></li>
-                            <li class="breadcrumb-item active" style="color: rgba(255,255,255,0.8);">News & Articles</li>
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}" style="color: rgba(255,255,255,0.8); text-decoration: none;">Home</a></li>
+                            <li class="breadcrumb-item active" style="color: white;">News & Articles</li>
                         </ol>
                     </nav>
+                    <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 15px; color: white;">News & Articles</h1>
+                    <p style="font-size: 1.2rem; opacity: 0.9;">Stay informed with the latest health news, medical insights, and hospital updates</p>
                 </div>
             </div>
         </div>
@@ -230,7 +230,7 @@
                     </div>
 
                     <!-- Newsletter Widget -->
-                    <div class="sidebar-widget" style="background: linear-gradient(135deg, #a8207a, #84a33f); border-radius: 15px; padding: 30px; box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08); color: white;">
+                    <div class="sidebar-widget" style="background: linear-gradient(135deg, #33970f, #84a33f); border-radius: 15px; padding: 30px; box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08); color: white;">
                         <h5 style="font-weight: 700; margin-bottom: 15px; font-size: 1.2rem; color: white;">Stay Updated</h5>
                         <p style="font-size: 0.9rem; margin-bottom: 20px; opacity: 0.95;">Subscribe to our newsletter for health tips and updates.</p>
                         <form>

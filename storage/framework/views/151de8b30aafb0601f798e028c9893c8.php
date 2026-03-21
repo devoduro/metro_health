@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/ashlocs-custom.css') }}">
+    <link rel="stylesheet" href="<?php echo e(asset('css/ashlocs-custom.css')); ?>">
    <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -275,10 +275,10 @@
 </head>
 <body>
     <!-- Top Header Bar -->
-    @include('partials.top_header')
+    <?php echo $__env->make('partials.top_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     
     <!-- Main Navbar -->
-    @include('partials.navigation')
+    <?php echo $__env->make('partials.navigation', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     
     <!-- Page Hero -->
     <section class="page-hero">
@@ -289,7 +289,7 @@
                     <p style="font-size: 1.2rem; opacity: 0.95;">Find answers to common questions about our services and procedures</p>
                     <nav aria-label="breadcrumb" style="margin-top: 20px;">
                         <ol class="breadcrumb justify-content-center" style="background: transparent;">
-                            <li class="breadcrumb-item"><a href="{{ route('home') }}" style="color: white; text-decoration: none;">Home</a></li>
+                            <li class="breadcrumb-item"><a href="<?php echo e(route('home')); ?>" style="color: white; text-decoration: none;">Home</a></li>
                             <li class="breadcrumb-item active" style="color: rgba(255,255,255,0.8);">FAQs</li>
                         </ol>
                     </nav>
@@ -395,7 +395,7 @@
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                General Doctors are available 24 hours a day. Specialists are available only at specified times within the week. You can see more on consultant availability on our <a href="{{ route('services.index') }}">services page</a>.
+                                General Doctors are available 24 hours a day. Specialists are available only at specified times within the week. You can see more on consultant availability on our <a href="<?php echo e(route('services.index')); ?>">services page</a>.
                             </div>
                         </div>
                     </div>
@@ -475,47 +475,47 @@
                     <div class="sidebar-widget" data-aos="fade-left">
                         <h5>Our Services</h5>
                         <div>
-                            <a href="{{ route('services.general-practice') }}" class="service-link-item">
+                            <a href="<?php echo e(route('services.general-practice')); ?>" class="service-link-item">
                                 <i class="fas fa-stethoscope"></i>
                                 <span>General Practice</span>
                             </a>
-                            <a href="{{ route('services.general-surgery') }}" class="service-link-item">
+                            <a href="<?php echo e(route('services.general-surgery')); ?>" class="service-link-item">
                                 <i class="fas fa-user-md"></i>
                                 <span>General Surgery</span>
                             </a>
-                            <a href="{{ route('services.obstetrics-gynaecology') }}" class="service-link-item">
+                            <a href="<?php echo e(route('services.obstetrics-gynaecology')); ?>" class="service-link-item">
                                 <i class="fas fa-baby"></i>
                                 <span>Obstetrics & Gynaecology</span>
                             </a>
-                            <a href="{{ route('services.geriatric-care') }}" class="service-link-item">
+                            <a href="<?php echo e(route('services.geriatric-care')); ?>" class="service-link-item">
                                 <i class="fas fa-user-friends"></i>
                                 <span>Geriatric Care</span>
                             </a>
-                            <a href="{{ route('services.neurology-neurosurgery') }}" class="service-link-item">
+                            <a href="<?php echo e(route('services.neurology-neurosurgery')); ?>" class="service-link-item">
                                 <i class="fas fa-brain"></i>
                                 <span>Neurology & Neurosurgery</span>
                             </a>
-                            <a href="{{ route('services.paediatrics') }}" class="service-link-item">
+                            <a href="<?php echo e(route('services.paediatrics')); ?>" class="service-link-item">
                                 <i class="fas fa-child"></i>
                                 <span>Paediatrics</span>
                             </a>
-                            <a href="{{ route('services.urology') }}" class="service-link-item">
+                            <a href="<?php echo e(route('services.urology')); ?>" class="service-link-item">
                                 <i class="fas fa-kidneys"></i>
                                 <span>Urology</span>
                             </a>
-                            <a href="{{ route('services.orthopaedic') }}" class="service-link-item">
+                            <a href="<?php echo e(route('services.orthopaedic')); ?>" class="service-link-item">
                                 <i class="fas fa-bone"></i>
                                 <span>Orthopaedic</span>
                             </a>
-                            <a href="{{ route('services.ent-care') }}" class="service-link-item">
+                            <a href="<?php echo e(route('services.ent-care')); ?>" class="service-link-item">
                                 <i class="fas fa-head-side-mask"></i>
                                 <span>ENT Care</span>
                             </a>
-                            <a href="{{ route('services.eye-care') }}" class="service-link-item">
+                            <a href="<?php echo e(route('services.eye-care')); ?>" class="service-link-item">
                                 <i class="fas fa-eye"></i>
                                 <span>Eye Care</span>
                             </a>
-                            <a href="{{ route('services.plastic-surgery') }}" class="service-link-item">
+                            <a href="<?php echo e(route('services.plastic-surgery')); ?>" class="service-link-item">
                                 <i class="fas fa-user-md"></i>
                                 <span>Plastic Surgery</span>
                             </a>
@@ -526,36 +526,37 @@
                     <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="100">
                         <h5>Recent News & Articles</h5>
                         <div>
-                            @php
+                            <?php
                                 $recentPosts = \App\Models\BlogPost::where('published', true)
                                     ->orderBy('published_at', 'desc')
                                     ->take(4)
                                     ->get();
-                            @endphp
+                            ?>
 
-                            @if($recentPosts->count() > 0)
-                                @foreach($recentPosts as $post)
+                            <?php if($recentPosts->count() > 0): ?>
+                                <?php $__currentLoopData = $recentPosts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="news-item">
                                     <div class="news-thumb">
-                                        @if($post->image)
-                                            <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=200'">
-                                        @else
-                                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=200" alt="{{ $post->title }}">
-                                        @endif
+                                        <?php if($post->image): ?>
+                                            <img src="<?php echo e(asset('storage/' . $post->image)); ?>" alt="<?php echo e($post->title); ?>" onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=200'">
+                                        <?php else: ?>
+                                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=200" alt="<?php echo e($post->title); ?>">
+                                        <?php endif; ?>
                                     </div>
                                     <div class="news-content">
-                                        <h6><a href="{{ route('news-update.show', $post->slug) }}">{{ Str::limit($post->title, 50) }}</a></h6>
+                                        <h6><a href="<?php echo e(route('news-update.show', $post->slug)); ?>"><?php echo e(Str::limit($post->title, 50)); ?></a></h6>
                                         <span class="news-date">
-                                            <i class="far fa-calendar me-1"></i>{{ $post->published_at ? $post->published_at->format('M d, Y') : 'Recent' }}
+                                            <i class="far fa-calendar me-1"></i><?php echo e($post->published_at ? $post->published_at->format('M d, Y') : 'Recent'); ?>
+
                                         </span>
                                     </div>
                                 </div>
-                                @endforeach
-                            @else
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            <?php else: ?>
                                 <p style="color: #666; font-size: 0.9rem; margin: 0;">No recent articles available.</p>
-                            @endif
+                            <?php endif; ?>
                         </div>
-                        <a href="{{ route('news-articles') }}" class="btn btn-sm w-100 mt-3" style="background: #a8207a; color: white; padding: 10px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; text-align: center;">
+                        <a href="<?php echo e(route('news-articles')); ?>" class="btn btn-sm w-100 mt-3" style="background: #a8207a; color: white; padding: 10px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; text-align: center;">
                             View All Articles <i class="fas fa-arrow-right ms-2"></i>
                         </a>
                     </div>
@@ -572,7 +573,7 @@
                             <i class="fas fa-envelope me-2"></i>
                             <a href="mailto:info@metrohealthgh.com" style="color: white; text-decoration: none; font-weight: 600;">info@metrohealthgh.com</a>
                         </div>
-                        <a href="{{ route('contact') }}" class="btn btn-light w-100" style="padding: 12px; font-weight: 600; border-radius: 8px; text-decoration: none; display: inline-block; text-align: center;">
+                        <a href="<?php echo e(route('contact')); ?>" class="btn btn-light w-100" style="padding: 12px; font-weight: 600; border-radius: 8px; text-decoration: none; display: inline-block; text-align: center;">
                             Contact Us
                         </a>
                     </div>
@@ -581,7 +582,7 @@
         </div>
     </section>
 
-    @include('partials.footer')
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -610,3 +611,4 @@
     </script>
 </body>
 </html>
+<?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/metrohealth/resources/views/faqs.blade.php ENDPATH**/ ?>

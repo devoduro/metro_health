@@ -45,7 +45,7 @@
 
                             <div class="mt-5">
                                 <h5 class="mb-3">Would you like to try again?</h5>
-                                <a href="{{ route('booking.index') }}" class="btn btn-primary-custom btn-lg me-2">
+                                <a href="{{ route('clinic-appointments.index') }}" class="btn btn-primary-custom btn-lg me-2">
                                     <i class="fas fa-redo me-2"></i>Try Again
                                 </a>
                                 <a href="{{ route('home') }}" class="btn btn-outline-secondary btn-lg">

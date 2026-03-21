@@ -127,7 +127,7 @@
                 <div class="col-lg-8 text-center" data-aos="fade-up">
                     <h2 class="mb-4">Ready to Experience the Ashlocs Difference?</h2>
                     <p class="lead mb-4">Book your appointment today and let us elevate your crown.</p>
-                    <a href="{{ route('booking.index') }}" class="btn btn-primary-custom btn-lg">Book Appointment</a>
+                    <a href="{{ route('clinic-appointments.index') }}" class="btn btn-primary-custom btn-lg">Book Appointment</a>
                 </div>
             </div>
         </div>

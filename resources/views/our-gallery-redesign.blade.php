@@ -68,13 +68,16 @@
 
                 @foreach($galleryItems as $index => $item)
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ ($index % 3) * 100 }}">
-                    <div class="gallery-item">
+                    <div class="gallery-item" onclick="openLightbox({{ $index }})" style="cursor: pointer;">
                         <div class="gallery-image">
                             <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}">
                             <div class="gallery-overlay">
                                 <div class="gallery-info">
                                     <span class="gallery-category">{{ $item['category'] }}</span>
                                     <h4 class="gallery-title">{{ $item['title'] }}</h4>
+                                    <div style="margin-top: 10px;">
+                                        <i class="fas fa-search-plus" style="font-size: 1.5rem;"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -99,6 +102,18 @@
         </div>
     </section>
 
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <span class="lightbox-prev" onclick="event.stopPropagation(); changeImage(-1)">&#10094;</span>
+        <span class="lightbox-next" onclick="event.stopPropagation(); changeImage(1)">&#10095;</span>
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <img id="lightboxImage" src="" alt="">
+            <div id="lightboxCaption"></div>
+        </div>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+
     @include('partials.footer')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -110,13 +125,57 @@
             once: true,
             offset: 50
         });
+
+        // Lightbox functionality
+        const galleryImages = @json(array_values($galleryItems));
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const modal = document.getElementById('lightboxModal');
+            const img = document.getElementById('lightboxImage');
+            const caption = document.getElementById('lightboxCaption');
+            const counter = document.getElementById('lightboxCounter');
+            
+            modal.style.display = 'flex';
+            img.src = galleryImages[index].image;
+            caption.textContent = galleryImages[index].title;
+            counter.textContent = `${index + 1} / ${galleryImages.length}`;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightboxModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex >= galleryImages.length) {
+                currentImageIndex = 0;
+            } else if (currentImageIndex < 0) {
+                currentImageIndex = galleryImages.length - 1;
+            }
+            openLightbox(currentImageIndex);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('lightboxModal');
+            if (modal.style.display === 'flex') {
+                if (e.key === 'ArrowLeft') changeImage(-1);
+                if (e.key === 'ArrowRight') changeImage(1);
+                if (e.key === 'Escape') closeLightbox();
+            }
+        });
     </script>
 
     <style>
     .gallery-hero {
-        background: linear-gradient(135deg, #a8207a 0%, #7ba428 100%);
+        background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(63, 109, 182, 0.85)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920') center/cover;
         padding: 120px 0 80px;
         margin-top: 44px;
+        position: relative;
     }
 
     .gallery-hero .breadcrumb {
@@ -235,6 +294,110 @@
         color: #666;
         font-size: 1.2rem;
         line-height: 1.8;
+    }
+
+    /* Lightbox Styles */
+    .lightbox-modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        align-items: center;
+        justify-content: center;
+    }
+
+    .lightbox-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lightbox-content img {
+        max-width: 100%;
+        max-height: 85vh;
+        object-fit: contain;
+        border-radius: 10px;
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    #lightboxCaption {
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .lightbox-close {
+        position: absolute;
+        top: 30px;
+        right: 50px;
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 10000;
+        transition: all 0.3s ease;
+    }
+
+    .lightbox-close:hover {
+        color: #84a33f;
+        transform: scale(1.2);
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        z-index: 10000;
+    }
+
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+        background: rgba(132, 163, 63, 0.8);
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .lightbox-prev {
+        left: 30px;
+    }
+
+    .lightbox-next {
+        right: 30px;
+    }
+
+    .lightbox-counter {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 1.1rem;
+        font-weight: 600;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px 25px;
+        border-radius: 25px;
     }
 
     @media (max-width: 991px) {

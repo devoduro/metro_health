@@ -50,7 +50,7 @@
                     <div class="service-detail-content">
                         <!-- Service Image -->
                         <div class="service-image mb-5" style="border-radius: 25px; overflow: hidden; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); position: relative;">
-                            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1200" 
+                            <img src="{{ asset('images/services/neurology-neurosurgery.jpg') }}" 
                                  alt="Neurology & Neurosurgery at Metro Health" 
                                  class="w-100" 
                                  style="height: 450px; object-fit: cover;">

@@ -349,6 +349,9 @@
                 <div class="partner-card" data-aos="zoom-in" data-aos-delay="500">
                     <img src="{{ asset('images/brands/bim-logo.png') }}" alt="BIMA Insurance" class="partner-logo">
                 </div>
+                <div class="partner-card" data-aos="zoom-in" data-aos-delay="550">
+                    <img src="{{ asset('images/brands/nmi-logo-green.webp') }}" alt="NMI Insurance" class="partner-logo">
+                </div>
             </div>
         </div>
     </section>

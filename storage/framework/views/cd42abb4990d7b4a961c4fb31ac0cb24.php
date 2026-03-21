@@ -44,22 +44,21 @@
             <!-- Our Services -->
             <div class="col-lg-3 col-6 mb-4 mb-lg-0">
                 <h5 style="color: white; font-weight: 700; font-size: 1.1rem; margin-bottom: 20px; position: relative; padding-bottom: 10px;">
-                    Our Services
+                    All Services
                     <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: #84a33f;"></span>
                 </h5>
                 <div style="display: flex; flex-direction: column; gap: 10px;">
                     <a href="<?php echo e(route('services.general-practice')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">General Practice</a>
-                    <a href="<?php echo e(route('services.eye-care')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Eye Care</a>
-                    <a href="<?php echo e(route('services.geriatric-care')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Geriatric Care</a>
+                    <a href="<?php echo e(route('services.general-surgery')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">General Surgery</a>
                     <a href="<?php echo e(route('services.obstetrics-gynaecology')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Obstetrics & Gynaecology</a>
-                    <a href="<?php echo e(route('services.ent-care')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">ENT Care</a>
+                    <a href="<?php echo e(route('services.geriatric-care')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Geriatric Care</a>
+                    <a href="<?php echo e(route('services.neurology-neurosurgery')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Neurology & Neurosurgery</a>
                     <a href="<?php echo e(route('services.paediatrics')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Paediatrics</a>
                     <a href="<?php echo e(route('services.urology')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Urology</a>
-                    <a href="<?php echo e(route('services.orthopedics')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Orthopedics</a>
-                    <a href="<?php echo e(route('services.internal-medicine')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Internal Medicine</a>
-                    <a href="<?php echo e(route('services.laboratory')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Laboratory Services</a>
-                    <a href="<?php echo e(route('services.radiology')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Radiology & Imaging</a>
-                    <a href="<?php echo e(route('services.pharmacy')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Pharmacy</a>
+                    <a href="<?php echo e(route('services.orthopaedic')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Orthopaedic</a>
+                    <a href="<?php echo e(route('services.ent-care')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">ENT Care</a>
+                    <a href="<?php echo e(route('services.eye-care')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Eye Care</a>
+                    <a href="<?php echo e(route('services.plastic-surgery')); ?>" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; display: block;">Plastic Surgery</a>
                 </div>
             </div>
 
