@@ -49,15 +49,10 @@
                 <div class="col-lg-8" data-aos="fade-right">
                     <div class="service-detail-content">
                         <!-- Service Image -->
-                        <div class="service-image mb-5" style="border-radius: 25px; overflow: hidden; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); position: relative;">
+                        <div class="service-image mb-5" style="border-radius: 25px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);">
                             <img src="{{ asset('images/services/general_p2.png') }}" 
                                  alt="General Practice at Metro Health" 
-                                 class="w-100" 
-                                 style="height: 450px; object-fit: cover;">
-                            <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%); padding: 30px; color: white;">
-                                <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 10px; color: white;">Expert General Practice Services</h3>
-                                <p style="font-size: 1.1rem; margin: 0; opacity: 0.9;">Personalized healthcare for you and your family</p>
-                            </div>
+                                 style="width: 100%; height: auto; display: block; border-radius: 25px;">
                         </div>
 
                         <h2 class="mb-4" style="font-size: 2.5rem; font-weight: 800;">General Practice: Your Partner in Lifelong Health</h2>
@@ -176,6 +171,13 @@
                             <div class="content-text" style="font-size: 1.05rem; line-height: 1.7; color: #555;">
                                 <p><strong style="color: #a8207a;">At Metro Health Hospital,</strong> our seasoned practitioners deliver personalised, patient-centered care within a modern, healing environment. We combine a decade of clinical expertise with a commitment to listening, ensuring you and your family receive care that is as compassionate as it is comprehensive.</p>
                             </div>
+                        </div>
+
+                        <!-- Additional Service Image -->
+                        <div class="service-image mt-5 mb-5" style="border-radius: 25px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);">
+                            <img src="{{ asset('images/services/general_p3.png') }}" 
+                                 alt="General Practice Services at Metro Health" 
+                                 style="width: 100%; height: 100%; display: block; border-radius: 25px;">
                         </div>
 
                         <!-- Expertise Section -->
