@@ -2,12 +2,12 @@
 
 
 <?php
-    $siteTitle = 'Ashlocs - Professional Hair Care for Textured Hair';
-    $pageTitle = isset($title) ? $title . ' | Ashlocs' : $siteTitle;
-    $metaDescription = $description ?? 'Professional dreadlocks, braiding, haircuts and training services. Expert care for textured hair across the UK. Book your appointment today.';
+    $siteTitle = 'Metro Health - Quality Healthcare Services';
+    $pageTitle = isset($title) ? $title . ' | Metro Health' : $siteTitle;
+    $metaDescription = $description ?? 'Quality healthcare services including specialist clinics, diagnostic services, and comprehensive medical care. Book your appointment with Metro Health today.';
     $metaImage = isset($image) ? asset($image) : asset('images/2026-01-12-J8o94jxc.png');
     $metaUrl = url()->current();
-    $keywords = $keywords ?? 'dreadlocks, locs, braids, haircuts, textured hair, natural hair, hair care, UK hair salon, mobile hair service, sisterlocks, microlocs, box braids, cornrows';
+    $keywords = $keywords ?? 'healthcare, medical services, hospital, clinic, specialist doctors, diagnostic services, health insurance, medical care, Ghana healthcare';
 ?>
 
 
@@ -15,9 +15,9 @@
 <meta name="title" content="<?php echo e($pageTitle); ?>">
 <meta name="description" content="<?php echo e($metaDescription); ?>">
 <meta name="keywords" content="<?php echo e($keywords); ?>">
-<meta name="author" content="Ashlocs">
+<meta name="author" content="Metro Health">
 <meta name="robots" content="index, follow">
-<meta name="language" content="English">
+<parameter name="language" content="English">
 <meta name="revisit-after" content="7 days">
 
 
@@ -26,8 +26,8 @@
 <meta property="og:title" content="<?php echo e($pageTitle); ?>">
 <meta property="og:description" content="<?php echo e($metaDescription); ?>">
 <meta property="og:image" content="<?php echo e($metaImage); ?>">
-<meta property="og:site_name" content="Ashlocs">
-<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Metro Health">
+<meta property="og:locale" content="en_GH">
 
 
 <meta property="twitter:card" content="summary_large_image">
@@ -41,7 +41,7 @@
 <link rel="canonical" href="<?php echo e($canonical ?? $metaUrl); ?>">
 
 
-<meta name="contact" content="bookings@ashlocs.co.uk">
-<meta name="geo.region" content="GB">
-<meta name="geo.placename" content="Reading, United Kingdom">
+<meta name="contact" content="info@metrohealth.com.gh">
+<meta name="geo.region" content="GH">
+<meta name="geo.placename" content="Accra, Ghana">
 <?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/metrohealth/resources/views/partials/seo.blade.php ENDPATH**/ ?>

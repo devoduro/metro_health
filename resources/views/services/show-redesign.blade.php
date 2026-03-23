@@ -7,7 +7,7 @@
     @include('partials.seo', [
         'title' => $service->title,
         'description' => Str::limit(strip_tags($service->description), 155),
-        'keywords' => $service->title . ', ' . $service->slug . ', hair care services, ashlocs services, UK hair salon',
+        'keywords' => $service->title . ', ' . $service->slug . ', medical services, healthcare Ghana, Metro Health',
         'image' => $service->image ?? 'images/2026-01-12-J8o94jxc.png'
     ])
     

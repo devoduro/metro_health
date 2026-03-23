@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     @include('partials.seo', [
-        'title' => 'Professional Hair Care & Dreadlock Specialists',
-        'description' => 'Expert dreadlocks, braiding, haircuts & training services for textured hair. UK-wide mobile service. Book your appointment with Ashlocs today.',
-        'keywords' => 'dreadlocks UK, locs specialist, braiding services, textured hair care, mobile hair salon, sisterlocks, box braids, cornrows, natural hair UK'
+        'title' => 'Quality Healthcare Services in Ghana',
+        'description' => 'Metro Health Hospital provides comprehensive healthcare services including specialist clinics, diagnostic services, and quality medical care. Book your appointment today.',
+        'keywords' => 'healthcare Ghana, hospital Accra, medical services, specialist doctors, diagnostic services, health insurance, quality healthcare'
     ])
     
     @include('partials.structured-data')
@@ -29,7 +29,7 @@
     <!-- Hero Slider Section -->
     <section class="hero-slider">
         <!-- Slide 1 -->
-        <div class="hero-slide active" style="background-image: url('images/sliders/slider1-1.png');">
+        <div class="hero-slide active" style="background-image: url('images/sliders/slider1-11.Jpg');">
             <div class="hero-slide-content">
                 <div class="container">
                     <p class="hero-subtitle" style="color: rgba(255,255,255,0.95); font-size: 0.9rem; font-weight: 600; letter-spacing: 2px; margin-bottom: 1rem;">EXCELLENCE IN HEALTHCARE</p>
@@ -45,7 +45,7 @@
         </div>
 
         <!-- Slide 2 -->
-        <div class="hero-slide" style="background-image: url('images/sliders/slider1-2.png');">
+        <div class="hero-slide" style="background-image: url('images/sliders/slider1-1.png');">
             <div class="hero-slide-content">
                 <div class="container">
                     <p class="hero-subtitle" style="color: #a8d68f; font-size: 0.9rem; font-weight: 600; letter-spacing: 2px; margin-bottom: 1rem; background: rgba(168, 214, 143, 0.2); padding: 8px 20px; border-radius: 25px; display: inline-block; border: 1px solid #a8d68f;">SPECIALIZED MEDICAL CARE</p>
@@ -220,7 +220,7 @@
                     <div class="medical-service-card">
                         <div class="service-number-badge">01</div>
                         <div class="service-card-image">
-                            <img src="{{ asset('images/gallery/resized/IMG_6845.jpg') }}" alt="General Practice">
+                            <img src="{{ asset('images/services/general_p.png') }}" alt="General Practice">
                         </div>
                         <div class="service-card-body">
                             <h3 class="service-card-title">General Practice</h3>
@@ -718,7 +718,7 @@
         // CTA Lightbox functionality
         const ctaImages = [
             {
-                image: '{{ asset('images/gallery/eldercare.jpeg') }}',
+                image: '{{ asset('images/gallery/services.jpeg') }}',
                 title: 'Elder Care at Metro Health'
             }
             

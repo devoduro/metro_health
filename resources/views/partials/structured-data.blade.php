@@ -2,93 +2,75 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "HairSalon",
-  "name": "Ashlocs",
+  "@type": "Hospital",
+  "name": "Metro Health Hospital",
   "image": "{{ asset('images/2026-01-12-J8o94jxc.png') }}",
-  "description": "Professional hair care specialists offering dreadlocks, braids, haircuts and training services across the UK.",
+  "description": "Quality healthcare services including specialist clinics, diagnostic services, and comprehensive medical care in Ghana.",
   "url": "{{ url('/') }}",
-  "telephone": "+447724500349",
-  "email": "bookings@ashlocs.co.uk",
+  "telephone": "+233241850091",
+  "email": "info@metrohealth.com.gh",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "9 Union St",
-    "addressLocality": "Reading",
-    "postalCode": "RG1 1EU",
-    "addressCountry": "GB"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 51.4543,
-    "longitude": -0.9781
+    "streetAddress": "Metro Health Hospital",
+    "addressLocality": "Accra",
+    "addressRegion": "Greater Accra",
+    "addressCountry": "GH"
   },
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Saturday",
-      "opens": "09:00",
-      "closes": "17:00"
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
     }
   ],
-  "priceRange": "££",
-  "servesCuisine": null,
   "acceptsReservations": "True",
   "areaServed": {
     "@type": "Country",
-    "name": "United Kingdom"
+    "name": "Ghana"
   },
+  "medicalSpecialty": [
+    "Obstetrics and Gynaecology",
+    "Pediatrics",
+    "ENT",
+    "Neurology",
+    "General Medicine",
+    "Diagnostic Services"
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Hair Care Services",
+    "name": "Medical Services",
     "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
-          "@type": "Service",
-          "name": "Dreadlocks Services",
-          "description": "Starter locs, traditional locs, sisterlocks, maintenance, extensions, styling and coloring"
+          "@type": "MedicalProcedure",
+          "name": "Specialist Clinics",
+          "description": "Obstetrics and Gynaecology, Pediatrics, ENT, and other specialist medical services"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
-          "@type": "Service",
-          "name": "Braiding Services",
-          "description": "Box braids, knotless braids, cornrows, goddess braids and protective styles"
+          "@type": "MedicalTest",
+          "name": "Diagnostic Services",
+          "description": "Laboratory tests, imaging, and comprehensive diagnostic services"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
-          "@type": "Service",
-          "name": "Haircut Services",
-          "description": "Professional cuts for men, women and children specializing in textured hair"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Training & Workshops",
-          "description": "Professional training in dreadlocks, braiding and haircut techniques"
+          "@type": "MedicalProcedure",
+          "name": "General Medical Care",
+          "description": "Comprehensive healthcare services for all ages"
         }
       }
     ]
   },
-  "sameAs": [
-    "https://www.facebook.com/share/183aATKKiS/",
-    "https://www.instagram.com/ashlocs",
-    "https://www.tiktok.com/@ashlocs_dreadlocks"
-  ],
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "500"
+    "ratingValue": "4.8",
+    "reviewCount": "250"
   }
 }
 </script>
