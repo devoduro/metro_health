@@ -60,7 +60,7 @@
                 <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
                         <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800" alt="General Practice" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="{{ asset('images/services/general_p.png') }}"  alt="General Practice" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div style="padding: 25px;">
                             <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">General Practice</h3>
@@ -74,7 +74,7 @@
                 <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
                         <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800" alt="General Surgery" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="{{ asset('images/services/surgery.jpg') }}"  alt="General Surgery" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div style="padding: 25px;">
                             <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">General Surgery</h3>
@@ -88,7 +88,7 @@
                 <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
                         <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=800" alt="Obstetrics & Gynaecology" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="{{ asset('images/services/gy2.png') }}"  alt="Obstetrics & Gynaecology" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div style="padding: 25px;">
                             <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">Obstetrics & Gynaecology</h3>
@@ -102,7 +102,7 @@
                 <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
                         <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800" alt="Geriatric Care" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="{{ asset('images/services/prmi-1.png') }}"  alt="Geriatric Care" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div style="padding: 25px;">
                             <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">Geriatric Care</h3>
@@ -116,7 +116,7 @@
                 <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
                         <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800" alt="Neurology & Neurosurgery" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="{{ asset('images/services/neurology-neurosurgery.jpg') }}"  alt="Neurology & Neurosurgery" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div style="padding: 25px;">
                             <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">Neurology & Neurosurgery</h3>
@@ -130,7 +130,7 @@
                 <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
                         <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800" alt="Paediatrics" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="{{ asset('images/services/Paediatrics.png') }}"  alt="Paediatrics" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div style="padding: 25px;">
                             <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">Paediatrics</h3>
@@ -144,7 +144,7 @@
                 <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
                         <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800" alt="Urology" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="{{ asset('images/services/Urology-1.jpg') }}"  alt="Urology" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div style="padding: 25px;">
                             <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">Urology</h3>
@@ -158,7 +158,7 @@
                 <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
                         <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800" alt="Orthopaedic" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="{{ asset('images/services/rehab-736x453.webp') }}"  alt="Orthopaedic" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div style="padding: 25px;">
                             <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">Orthopaedic</h3>
@@ -172,7 +172,7 @@
                 <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
                         <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=800" alt="ENT Care" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="{{ asset('images/services/ENT-02.jpg') }}"  alt="ENT Care" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div style="padding: 25px;">
                             <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">ENT Care</h3>
@@ -186,7 +186,7 @@
                 <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
                         <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=800" alt="Eye Care" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="{{ asset('images/services/eyecare.png') }}"  alt="Eye Care" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div style="padding: 25px;">
                             <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">Eye Care</h3>
@@ -200,7 +200,7 @@
                 <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-card" style="background: white; border-radius: 15px; overflow: hidden; height: 100%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
                         <div class="service-image" style="width: 100%; height: 200px; overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800" alt="Plastic Surgery" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img  src="{{ asset('images/services/plastic_surgery1.png') }}"  alt="Plastic Surgery" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div style="padding: 25px;">
                             <h3 class="mb-3" style="font-size: 1.4rem; font-weight: 700; color: #1a1a1a;">Plastic Surgery</h3>

@@ -404,9 +404,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <a href="{{ route('faqs') }}" class="cta-button-card" data-aos="fade-up" data-aos-delay="200">
-                                    <div class="cta-button-content">
+                            <div class="col-md-6"> 
+
+                                <a href="{{ route('faqs') }}" class="cta-button-card" data-aos="fade-up" data-aos-delay="200" style="background-image: url('{{ asset('images/services/serv9.jpg') }}'); background-size: cover; background-position: center; position: relative;">
+                                    <div class="cta-button-content" style="background: linear-gradient(135deg, rgba(14, 37, 112, 0.85) 0%, rgba(17, 84, 178, 0.85) 100%); position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; padding: 40px;">
                                         <div class="cta-button-icon">
                                             <i class="fas fa-question-circle"></i>
                                         </div>
@@ -945,7 +946,7 @@
                         <a href="https://outlook.office365.com/owa/calendar/MetroHealthHospital@metrohealth.com.gh/bookings/" 
                            target="_blank" 
                            class="btn-consult-now">
-                            <i class="fab fa-microsoft"></i>
+                            <i class="fas fa-calendar-check"></i>
                             <span>Consult Now</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -1465,7 +1466,7 @@
         .cta-section {
             position: relative;
             background: linear-gradient(to right, rgba(30, 50, 90, 0.85), rgba(20, 40, 70, 0.75)),
-                        url('https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=1600') center/cover;
+                        url('images/sliders/slider1-11.jpg') center/cover;
             padding: 80px 0;
             margin-top: 0;
             overflow: hidden;
@@ -1985,7 +1986,7 @@
         .clinic-schedule-section {
             position: relative;
             background: linear-gradient(to right, rgba(30, 50, 90, 0.85), rgba(20, 40, 70, 0.75)),
-                        url('https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=1600') center/cover;
+                        url('images/sliders/slider1-1.png') center/cover;
             padding: 80px 0;
             margin-top: 0;
             overflow: hidden;

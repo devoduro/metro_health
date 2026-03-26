@@ -17,7 +17,7 @@
         }
 
         .page-hero {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(59, 130, 246, 0.85)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920') center/cover;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(11, 62, 145, 0.85)), url('images/services/faqs.jpg') center/cover;
             padding: 120px 0 80px;
             position: relative;
         }

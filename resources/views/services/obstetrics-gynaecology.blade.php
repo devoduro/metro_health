@@ -49,15 +49,13 @@
                 <div class="col-lg-8" data-aos="fade-right">
                     <div class="service-detail-content">
                         <!-- Service Image -->
-                        <div class="service-image mb-5" style="border-radius: 25px; overflow: hidden; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); position: relative;">
-                            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=1200" 
+
+
+                        
+                        <div class="service-image mb-5" style="border-radius: 25px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);">
+                              <img src="{{ asset('images/services/gy2.png') }}" 
                                  alt="Obstetrics & Gynaecology at Metro Health" 
-                                 class="w-100" 
-                                 style="height: 450px; object-fit: cover;">
-                            <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%); padding: 30px; color: white;">
-                                <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 10px; color: white;">Compassionate Women's Healthcare</h3>
-                                <p style="font-size: 1.1rem; margin: 0; opacity: 0.9;">Expert care for mothers and women of all ages</p>
-                            </div>
+                                 style="width: 100%; height: auto; display: block; border-radius: 25px;">
                         </div>
 
                         <h2 class="mb-4" style="font-size: 2.5rem; font-weight: 800;">Obstetrics & Gynaecology</h2>
@@ -243,6 +241,11 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+           <div class="service-image mb-5" style="border-radius: 25px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);">
+                              <img src="{{ asset('images/services/gy.png') }}" 
+                                 alt="Obstetrics & Gynaecology at Metro Health" 
+                                 style="width: 100%; height: auto; display: block; border-radius: 25px;">
                         </div>
 
                         <!-- Maternity Care Section -->

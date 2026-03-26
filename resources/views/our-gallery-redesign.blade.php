@@ -59,7 +59,7 @@
                     foreach ($galleryImages as $imagePath) {
                         $filename = basename($imagePath);
                         $galleryItems[] = [
-                            'title' => 'Metro Health Hospital',
+                            'title' => '',
                             'image' => asset('images/gallery/resized/' . $filename),
                             'category' => 'Gallery'
                         ];
@@ -172,7 +172,7 @@
 
     <style>
     .gallery-hero {
-        background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(63, 109, 182, 0.85)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920') center/cover;
+        background: linear-gradient(135deg, rgba(11, 40, 120, 0.9), rgba(63, 109, 182, 0.85)), url('images/sliders/slider1-11.jpg') center/cover;
         padding: 120px 0 80px;
         margin-top: 44px;
         position: relative;
@@ -245,7 +245,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(to top, rgba(168, 32, 122, 0.95) 0%, rgba(123, 164, 40, 0.7) 100%);
+        background: linear-gradient(to top, rgba(9, 147, 69, 0.95) 0%, rgba(143, 196, 36, 0.7) 100%);
         display: flex;
         align-items: flex-end;
         padding: 25px;

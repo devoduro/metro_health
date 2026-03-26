@@ -50,10 +50,9 @@
                     <div class="service-detail-content">
                         <!-- Service Image -->
                         <div class="service-image mb-5" style="border-radius: 25px; overflow: hidden; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); position: relative;">
-                            <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=1200" 
-                                 alt="General Surgery at Metro Health" 
-                                 class="w-100" 
-                                 style="height: 450px; object-fit: cover;">
+                                                    <img src="{{ asset('images/services/surgery.png') }}"       alt="General Surgery at Metro Health" 
+                                 class="100%" 
+                                 style="height: auto; object-fit: cover;">
                             <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%); padding: 30px; color: white;">
                                 <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 10px; color: white;">Advanced Surgical Solutions</h3>
                                 <p style="font-size: 1.1rem; margin: 0; opacity: 0.9;">State-of-the-art surgical care for optimal outcomes</p>
@@ -142,6 +141,12 @@
                             </div>
                         </div>
 
+
+                         <div class="service-image mt-5 mb-5" style="border-radius: 25px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);">
+                            <img src="{{ asset('images/services/surgery2.png') }}" 
+                                 alt="General Practice Services at Metro Health" 
+                                 style="width: 100%; height: 100%; display: block; border-radius: 25px;">
+                        </div>
                         <!-- Our Approach Section -->
                         <div class="expertise-section mt-5" style="background: #f9f9f9; border-radius: 12px; padding: 35px; border-left: 4px solid #a8207a;">
                             <h3 class="mb-3" style="font-size: 1.85rem; font-weight: 600; color: #1a1a1a;">Our Approach</h3>

@@ -17,7 +17,7 @@
         }
 
         .page-hero {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(59, 130, 246, 0.85)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920') center/cover;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(59, 130, 246, 0.85)), url('images/sliders/slider1-11.jpg') center/cover;
             padding: 120px 0 80px;
             position: relative;
         }
@@ -415,8 +415,11 @@
                 </div>
 
                 <div class="col-lg-6" data-aos="fade-left">
-                    <img src="{{ asset('images/about/Friday-7.jpg') }}" alt="Business Healthcare" style="width: 100%; border-radius: 20px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);">
-                </div>
+                    <img src="{{ asset('images/about/IMG_6849.jpg') }}" alt="Business Healthcare" style="width: 100%; border-radius: 2px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);">
+                
+                   <img src="{{ asset('images/sliders/slider1-11.jpg') }}" alt="Business Healthcare" style="width: 100%; border-radius: 2px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);">
+</div>
+                
             </div>
         </div>
     </section>

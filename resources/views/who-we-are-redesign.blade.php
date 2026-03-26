@@ -321,7 +321,7 @@
 
     <style>
     .about-hero {
-        background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(59, 130, 246, 0.85)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920') center/cover;
+        background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(20, 63, 133, 0.85)), url('images/about/work.jpg') center/cover;
         padding: 120px 0 80px;
         margin-top: 44px;
         position: relative;
@@ -567,7 +567,7 @@
     /* Call to Action Section */
     .cta-section {
         padding: 100px 0;
-        background: linear-gradient(135deg, rgba(14, 52, 134, 0.9), rgba(44, 49, 173, 0.85)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920') center/cover;
+        background: linear-gradient(135deg, rgba(14, 52, 134, 0.9), rgba(44, 49, 173, 0.85)), url('images/about/work.jpg') center/cover;
         position: relative;
     }
 

@@ -26,7 +26,7 @@
     @include('partials.navigation')
     
     <!-- Page Hero -->
-    <section class="page-hero" style="background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(63, 109, 182, 0.85)), url('https://images.unsplash.com/photo-1504439468489-c8920d796a29?w=1920') center/cover; padding: 120px 0 80px; margin-top: 44px; position: relative;">
+    <section class="page-hero" style="background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(63, 109, 182, 0.85)), url('images/services/1693305863314.jpeg') center/cover; padding: 120px 0 80px; margin-top: 44px; position: relative;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center text-white" data-aos="fade-up">

@@ -186,6 +186,13 @@
                             </div>
                         </div>
 
+
+                        
+                       <div class="service-image mt-5 mb-5" style="border-radius: 25px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);">
+                            <img src="{{ asset('images/services/NeurologyNeurosurgery.jpeg') }}" 
+                                 alt="General Practice Services at Metro Health" 
+                                 style="width: 100%; height: 100%; display: block; border-radius: 25px;">
+                        </div>
                         <!-- Our Approach Section -->
                         <div class="expertise-section mt-5" style="background: #f9f9f9; border-radius: 12px; padding: 35px; border-left: 4px solid #a8207a;">
                             <h3 class="mb-3" style="font-size: 1.85rem; font-weight: 600; color: #1a1a1a;">Expert Neurological & Neurosurgical Care</h3>

@@ -50,7 +50,7 @@
                     <div class="service-detail-content">
                         <!-- Service Image -->
                         <div class="service-image mb-5" style="border-radius: 25px; overflow: hidden; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); position: relative;">
-                            <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=1200" 
+                            <img src="{{ asset('images/services/rehab-736x453.png') }}" 
                                  alt="Orthopaedic at Metro Health" 
                                  class="w-100" 
                                  style="height: 450px; object-fit: cover;">
@@ -183,7 +183,12 @@
 
                             </div>
                         </div>
-
+   <!-- Additional Service Image -->
+                        <div class="service-image mt-5 mb-5" style="border-radius: 25px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);">
+                            <img src="{{ asset('images/services/orthoped.jpg') }}" 
+                                 alt="General Practice Services at Metro Health" 
+                                 style="width: 100%; height: 100%; display: block; border-radius: 25px;">
+                        </div>
                         <!-- Our Approach Section -->
                         <div class="expertise-section mt-5" style="background: #f9f9f9; border-radius: 12px; padding: 35px; border-left: 4px solid #a8207a;">
                             <h3 class="mb-3" style="font-size: 1.85rem; font-weight: 600; color: #1a1a1a;">Expert Orthopaedic Care</h3>
