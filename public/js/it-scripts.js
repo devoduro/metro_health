@@ -84,7 +84,7 @@
             });
 
             // Typewriter Effect Logic
-            const typewriterText = "Professional Hair Care & Dreadlock Specialists";
+            const typewriterText = "Metro Health Hospital";
             const typewriterElement = document.getElementById('typewriter-text');
             let charIndex = 0;
 

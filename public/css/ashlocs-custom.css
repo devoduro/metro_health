@@ -150,12 +150,16 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     padding: 0;
-    margin-left: -50px;
+    margin-left: 0;
+    max-width: 200px;
+    flex-shrink: 0;
 }
 
 .navbar-logo {
-    height: 70px;
+    height: 80px;
     width: auto;
+    max-width: 220px;
+    object-fit: contain;
     transition: all 0.3s ease;
 }
 
@@ -2632,42 +2636,15 @@ footer h5 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    /* Top Header Mobile */
+    /* Hide Top Header on Mobile */
     .top-header {
-        font-size: 0.7rem;
-        padding: 8px 0;
-    }
-    
-    .top-header .row {
-        flex-direction: column;
-        gap: 5px;
-    }
-    
-    .top-header .col-md-6 {
-        text-align: center !important;
-    }
-    
-    .top-header-left,
-    .top-header-right {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        align-items: center;
-    }
-    
-    .top-header-link {
-        font-size: 0.75rem;
-        margin: 0 !important;
-    }
-    
-    .top-header-link i {
-        margin-right: 3px;
+        display: none;
     }
     
     /* Main Navbar Mobile */
     .main-navbar {
         padding: 0.5rem 0;
-        top: 80px;
+        top: 0;
     }
     
     .navbar {
@@ -2682,38 +2659,48 @@ footer h5 {
     
     .navbar-brand {
         font-size: 1.3rem;
+        margin-left: 0;
+        max-width: 160px;
+        flex-shrink: 0;
     }
     
     .navbar-logo {
         height: 50px;
+        width: 100%;
+        max-width: 150px;
+        object-fit: contain;
     }
     
     .navbar-toggler {
-        border: none;
+        border: 2px solid var(--metro-green);
         padding: 0.5rem;
         font-size: 1.5rem;
-        color: var(--ashlocs-dark);
+        color: var(--metro-green);
         background: transparent;
         z-index: 1000;
+        border-radius: 8px;
     }
     
     .navbar-toggler:focus {
         box-shadow: none;
         outline: none;
+        border-color: var(--metro-green);
     }
     
     .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(44, 44, 44, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2384a33f' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         width: 1.5em;
         height: 1.5em;
     }
     
     .navbar-collapse {
         background: rgba(255, 255, 255, 0.98);
-        padding: 1rem;
+        padding: 1.5rem;
         margin-top: 1rem;
         border-radius: 10px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 999;
     }
     
     .navbar-nav {
@@ -2722,11 +2709,48 @@ footer h5 {
     
     .nav-item {
         width: 100%;
-        margin: 0.3rem 0;
+        margin-bottom: 0.5rem;
     }
     
     .nav-link {
-        padding: 0.7rem 1rem !important;
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+    }
+    
+    .nav-link:hover {
+        background: var(--metro-green);
+        color: white !important;
+    }
+    
+    .dropdown-menu {
+        border: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+    }
+    
+    .dropdown-item {
+        padding: 0.75rem 1rem;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+    
+    .dropdown-item:hover {
+        background: var(--metro-green);
+        color: white;
+    }
+    
+    .btn-book-appointment {
+        display: block;
+        width: 100%;
+        margin-top: 1rem;
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 0.75rem;
     }
     
     .btn-primary-custom,
@@ -2950,7 +2974,272 @@ footer h5 {
     }
 }
 
+/* Tablet Responsiveness */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Top Header Tablet */
+    .top-header {
+        font-size: 0.85rem;
+        padding: 12px 0;
+    }
+    
+    .top-header-left,
+    .top-header-right {
+        gap: 20px;
+    }
+    
+    .top-header-link {
+        font-size: 0.85rem;
+    }
+    
+    /* Main Navbar Tablet */
+    .main-navbar {
+        top: 60px;
+    }
+    
+    .navbar-logo {
+        height: 55px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+    }
+    
+    .dropdown-menu {
+        font-size: 0.85rem;
+    }
+    
+    .btn-book-appointment {
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
+/* Landscape Mode Responsiveness */
+@media (max-height: 500px) and (orientation: landscape) {
+    /* Hide Top Header in Landscape */
+    .top-header {
+        display: none;
+    }
+    
+    /* Main Navbar Landscape */
+    .main-navbar {
+        top: 0;
+    }
+    
+    .navbar-logo {
+        height: 45px;
+        width: auto;
+        max-width: 150px;
+        object-fit: contain;
+    }
+    
+    .navbar-brand {
+        font-size: 1rem;
+    }
+    
+    .navbar-toggler {
+        padding: 0.3rem;
+        font-size: 1rem;
+    }
+    
+    .navbar-collapse {
+        padding: 0.8rem;
+        margin-top: 0.5rem;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    .dropdown-item {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.75rem;
+    }
+    
+    .btn-book-appointment {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+}
+
+/* Smooth Transitions and Micro-interactions */
+.top-header-link {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+}
+
+.top-header-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-toggler {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-toggler:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(132, 163, 63, 0.3);
+}
+
+.navbar-toggler:active {
+    transform: scale(0.95);
+}
+
+.nav-link {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.nav-link:hover::before {
+    left: 100%;
+}
+
+.dropdown-item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(0);
+}
+
+.dropdown-item:hover {
+    transform: translateX(5px);
+}
+
+.btn-book-appointment {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-book-appointment::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-book-appointment:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Loading State Animation */
+.navbar-collapse.collapsing {
+    transition: height 0.35s ease-in-out;
+}
+
+/* Focus States for Accessibility */
+.navbar-toggler:focus,
+.nav-link:focus,
+.dropdown-item:focus,
+.btn-book-appointment:focus,
+.top-header-link:focus {
+    outline: 2px solid var(--metro-green);
+    outline-offset: 2px;
+}
+
+/* Touch Interaction Improvements */
+@media (hover: none) and (pointer: coarse) {
+    .navbar-toggler {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .nav-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .dropdown-item {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .btn-book-appointment {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .top-header-link {
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+    }
+}
+
 @media (max-width: 576px) {
+    /* Hide Top Header on Extra Small Mobile */
+    .top-header {
+        display: none;
+    }
+    
+    /* Main Navbar Extra Small Mobile */
+    .main-navbar {
+        top: 0;
+    }
+    
+    .navbar-logo {
+        height: 50px;
+        width: auto;
+        max-width: 160px;
+        object-fit: contain;
+    }
+    
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+    
+    .navbar-toggler {
+        padding: 0.4rem;
+        font-size: 1.2rem;
+    }
+    
+    .navbar-collapse {
+        padding: 1rem;
+    }
+    
+    .nav-link {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .dropdown-item {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    .btn-book-appointment {
+        font-size: 0.8rem;
+        padding: 0.6rem;
+    }
+    
     .hero-slide-content h1 {
         font-size: 1.6rem;
         margin-bottom: 0.6rem;

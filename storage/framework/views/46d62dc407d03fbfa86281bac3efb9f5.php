@@ -1456,7 +1456,7 @@ unset($__errorArgs, $__bag); ?>
     </style>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/447724500349" 
+    <a href="https://wa.me/233546036501" 
        class="whatsapp-float" 
        target="_blank" 
        rel="noopener noreferrer"

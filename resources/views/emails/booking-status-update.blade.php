@@ -249,7 +249,7 @@
             @endif
             
             <p style="text-align: center;">
-                <a href="tel:07724500349" class="button">📞 Call Us: 07724 500 349</a>
+                <a href="tel:+233241850091" class="button">📞 Call Us: +233 24 185 0091</a>
             </p>
             
             <p style="color: #777; font-size: 14px; text-align: center;">
@@ -259,8 +259,8 @@
         
         <div class="footer">
             <p><strong>Ashlocs</strong></p>
-            <p>📧 bookings@ashlocs.co.uk | 📞 07724 500 349</p>
-            <p>&copy; {{ date('Y') }} Ashlocs. All Rights Reserved.</p>
+            <p>📧 bookings@http://metrohealthgh.com/ | 📞 +233 24 185 0091</p>
+            <p>&copy; {{ date('Y') }} Metro Health. All Rights Reserved.</p>
         </div>
     </div>
 </body>
